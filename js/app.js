@@ -60,7 +60,7 @@
   //   前端用内嵌公钥验签——无私钥造不出合法码、一机一码防转借；全程离线，无需联网/后端。
   //   作者发码：node ../license-author/author_gen.js <机器码>  （私钥仅在 license-author/ 内，不随包发出）。
   //   局限：不能远程精准吊销单设备（换公钥重发仅对打开新版者生效，已激活旧版仍可用）；如要远程吊销请回方案A。
-  const SKIP_ACTIVATION = false;
+  const SKIP_ACTIVATION = true;
   // 归一化 emoji（去掉变体选择符 U+FE0F），用于匹配课程封面 SVG 图标
   function normEmoji(e) { return (e || '').replace(/[️]/g, ''); } // 去掉 U+FE0F 变体选择符
   function coverIcon(icon) {
