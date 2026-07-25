@@ -60,7 +60,7 @@
   //   前端用内嵌公钥验签——无私钥造不出合法码、一机一码防转借；全程离线，无需联网/后端。
   //   作者发码：node ../license-author/author_gen.js <机器码>  （私钥仅在 license-author/ 内，不随包发出）。
   //   局限：不能远程精准吊销单设备（换公钥重发仅对打开新版者生效，已激活旧版仍可用）；如要远程吊销请回方案A。
-  const SKIP_ACTIVATION = true;
+  const SKIP_ACTIVATION = false;
   // 归一化 emoji（去掉变体选择符 U+FE0F），用于匹配课程封面 SVG 图标
   function normEmoji(e) { return (e || '').replace(/[️]/g, ''); } // 去掉 U+FE0F 变体选择符
   function coverIcon(icon) {
@@ -85,8 +85,17 @@
   function saveStyle(v) { if (STYLES.some((s) => s.id === v)) localStorage.setItem(STYLE_KEY, v); }
   // 资源版本号：与 tools/gen_audio.py 的 BUILD 保持一致；改语音后同步改这里，浏览器自动拉最新，免硬刷新
   const ASSET_V = '20260725o';
+  // ===== 语音性别：家长页可选「男声(云希) / 女声(晓晓)」。默认男声（与 data/audio.js 既有烤制一致）=====
+  const GENDER_KEY = 'course_voice_gender';
+  const GENDERS = [{ id: 'male', label: '男声 · 云希' }, { id: 'female', label: '女声 · 晓晓' }];
+  function loadGender() { const v = localStorage.getItem(GENDER_KEY); return GENDERS.some((g) => g.id === v) ? v : 'male'; }
+  function saveGender(v) { if (GENDERS.some((g) => g.id === v)) localStorage.setItem(GENDER_KEY, v); }
+  // 当前性别对应的讲义/习题/小结映射：女声走 AUDIO_MAP_FEMALE（audio_female/），男声走 AUDIO_MAP（audio/）
+  function audioMap() { return loadGender() === 'female' ? (window.AUDIO_MAP_FEMALE || window.AUDIO_MAP) : window.AUDIO_MAP; }
+  // 路径性别化：女声把 audio/ 前缀换成 audio_female/（男声原样）
+  function gpath(p) { return loadGender() === 'female' ? String(p || '').replace(/^audio\//, 'audio_female/') : p; }
   // 风格化语音文件解析：优先 audio/<base>_<style>.mp3，回退 audio/<base>.mp3（如 narrate_gentle→narrate）
-  function vfile(base) { const st = loadStyle(); return 'audio/' + base + '_' + st + '.mp3?v=' + ASSET_V; }
+  function vfile(base) { const st = loadStyle(); return gpath('audio/' + base + '_' + st + '.mp3?v=' + ASSET_V); }
 
   // ===== 评价模块话术：按「结果状态 × 风格」出自然真人话术（消人机感）=====
   // 状态：notDone=没做完 / partial=做完但部分错 / allCorrect=全做对
@@ -270,7 +279,7 @@
     return words[Math.floor(Math.random() * words.length)];
   }
   function getDoneCount() {
-    return flatLessons().filter(function(l) { return progress[l.id] && progress[l.id].done; }).length;
+    return studentLessons().filter(function(l) { return progress[l.id] && progress[l.id].done; }).length;
   }
   function $(s) { return document.querySelector(s); }
   function escapeHtml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
@@ -303,12 +312,99 @@
     b.push({ p: les.award.p, title: les.award.title, badge: les.award.badge, desc: les.award.desc || '', ts: Date.now() });
     saveBadges(b);
   }
-  // 当前“佩戴中”的勋章 = 已得勋章里进度最高的一枚（在后续进度里一直佩戴）
+  // 当前“佩戴中”的勋章 = 已得勋章里进度最高的一枚（跳过阶段考章，优先章节/毕业/过程章）
   function wornBadge() {
-    const b = loadBadges();
+    const b = loadBadges().filter(function (x) { return x.cat !== 'exam'; });
     if (!b.length) return null;
     b.sort(function (a, x) { return a.p - x.p; });
     return b[b.length - 1];
+  }
+
+  // ===== 勋章全集定义（数据层不再逐课挂 award，统一在此声明、由 checkAllBadges 全局扫描发放）=====
+  // 分类：chapter 章勋章(13) / grad 毕业大章(1) / process 过程徽章(3) / exam 阶段考过关章(4) — 共 21 枚
+  const CHAPTER_BADGES = [
+    { p: 1,  ch: 0,  cat: 'chapter', badge: '🕷️', title: '初见爬虫章',   desc: '完成「入门启航」全部课程' },
+    { p: 2,  ch: 1,  cat: 'chapter', badge: '🐍', title: 'Python 速通章', desc: '完成「Python 速通」全部课程' },
+    { p: 3,  ch: 2,  cat: 'chapter', badge: '🌐', title: '网页 HTTP 章',  desc: '完成「网页与 HTTP」全部课程' },
+    { p: 4,  ch: 3,  cat: 'chapter', badge: '📡', title: '抓取实战章',   desc: '完成「requests 抓取」全部课程' },
+    { p: 5,  ch: 4,  cat: 'chapter', badge: '🍲', title: '解析魔法章',   desc: '完成「BeautifulSoup 解析」全部课程' },
+    { p: 6,  ch: 5,  cat: 'chapter', badge: '🔤', title: '正则 JSON 章',  desc: '完成「正则与 JSON」全部课程' },
+    { p: 7,  ch: 6,  cat: 'chapter', badge: '💾', title: '数据存储章',   desc: '完成「数据存储」全部课程' },
+    { p: 8,  ch: 7,  cat: 'chapter', badge: '🚀', title: '进阶技巧章',   desc: '完成「进阶技巧」全部课程' },
+    { p: 9,  ch: 8,  cat: 'chapter', badge: '🛡️', title: '合规反爬章',   desc: '完成「反爬与合规」全部课程' },
+    { p: 10, ch: 9,  cat: 'chapter', badge: '🏆', title: '实战项目章',   desc: '完成「实战项目」全部课程' },
+    { p: 11, ch: 10, cat: 'chapter', badge: '🎯', title: '毕业冲刺章',   desc: '完成「毕业冲刺」全部课程' },
+    { p: 12, ch: 11, cat: 'chapter', badge: '🎓', title: '毕业实战章',   desc: '完成「毕业实战项目」全部课程' },
+    { p: 13, ch: 12, cat: 'chapter', badge: '🍱', title: '进阶加餐章',   desc: '完成「进阶加餐」全部课程' }
+  ];
+  const GRAD_BADGE = { p: 14, cat: 'grad', badge: '👑', title: 'Python 小学士', desc: '走完毕业全程：实战项目+毕业冲刺+毕业实战全部完成' };
+  const PROCESS_BADGES = [
+    { p: 15, cat: 'process', badge: '📅', title: '全勤勋章', desc: '全部 49 节课都完成' },
+    { p: 16, cat: 'process', badge: '💯', title: '满分勋章', desc: '所有练习首次提交即全对' },
+    { p: 17, cat: 'process', badge: '🛠️', title: '动手达人', desc: '所有课的动手任务全部勾掉' }
+  ];
+  const EXAM_BADGES = [
+    { p: 21, id: 'exam1', cat: 'exam', badge: '🥇', title: '阶段考①过关', desc: '地基三章（入门/Python/网页）综合测验首次正确率 ≥80%' },
+    { p: 22, id: 'exam2', cat: 'exam', badge: '🥈', title: '阶段考②过关', desc: '抓取解析三章（requests/bs4/正则JSON）综合测验 ≥80%' },
+    { p: 23, id: 'exam3', cat: 'exam', badge: '🥉', title: '阶段考③过关', desc: '存储进阶反爬三章综合测验 ≥80%' },
+    { p: 24, id: 'exam4', cat: 'exam', badge: '🏅', title: '阶段考④过关', desc: '毕业全程（实战/冲刺/毕设）综合测验 ≥80%' }
+  ];
+  function allAwardDefs() {
+    return CHAPTER_BADGES.concat([GRAD_BADGE]).concat(PROCESS_BADGES).concat(EXAM_BADGES)
+      .sort(function (a, b) { return a.p - b.p; });
+  }
+  // ---- 各类达成判定 ----
+  function chapterDone(chIdx) {
+    const ch = data.chapters[chIdx]; if (!ch) return false;
+    return ch.lessons.every(function (l) { return progress[l.id] && progress[l.id].done; });
+  }
+  function allLessonsDone() {
+    return studentLessons().every(function (l) { return progress[l.id] && progress[l.id].done; });
+  }
+  function allFirstCorrect() {
+    return studentLessons().every(function (l) {
+      const exs = l.exercises || []; if (!exs.length) return true;
+      const fa = (progress[l.id] || {}).firstAttempts || {};
+      return exs.every(function (e, i) { return fa[i] === 'correct'; });
+    });
+  }
+  function allTasksDone() {
+    return studentLessons().every(function (l) {
+      const ts = l.tasks || []; if (!ts.length) return true;
+      let done = {}; try { done = JSON.parse(localStorage.getItem('tasks_v1_' + l.id) || '{}'); } catch (e) {}
+      return ts.every(function (t, i) { return done[i]; });
+    });
+  }
+  function examRatio(id) {
+    const l = findLesson(id); if (!l) return -1;
+    const exs = l.exercises || []; if (!exs.length) return -1;
+    const fa = (progress[id] || {}).firstAttempts || {};
+    let correct = 0;
+    exs.forEach(function (e, i) { if (fa[i] === 'correct') correct++; });
+    return correct / exs.length;
+  }
+  // 全局扫描：达成即发章（不重复），返回本次新获得的章（用于撒花/播报）
+  function checkAllBadges() {
+    const earned = loadBadges();
+    const have = function (p) { return earned.some(function (x) { return x.p === p; }); };
+    const newly = [];
+    function grant(def) {
+      if (have(def.p)) return;
+      earned.push({ p: def.p, cat: def.cat, title: def.title, badge: def.badge, desc: def.desc || '', ts: Date.now() });
+      newly.push(def);
+    }
+    CHAPTER_BADGES.forEach(function (d) { if (chapterDone(d.ch)) grant(d); });
+    if (chapterDone(9) && chapterDone(10) && chapterDone(11)) grant(GRAD_BADGE);
+    if (allLessonsDone()) grant(PROCESS_BADGES[0]);
+    if (allFirstCorrect()) grant(PROCESS_BADGES[1]);
+    if (allTasksDone()) grant(PROCESS_BADGES[2]);
+    EXAM_BADGES.forEach(function (d) { if (examRatio(d.id) >= 0.8) grant(d); });
+    if (newly.length) {
+      saveBadges(earned);
+      newly.forEach(function (d) { toast(pickAwardMsg(d), 5000); });
+      launchConfetti();
+    }
+    return newly;
   }
   // 离开课时时累计学习时长（秒）
   function accumulateStudyTime() {
@@ -554,7 +650,7 @@
     _wPaused = false;
     _voiceStopAll();
     _wKey = key;
-    const file = 'audio/words/' + String(en).toLowerCase() + '_' + (kind || 'en') + '.mp3?v=' + ASSET_V;
+    const file = gpath('audio/words/' + String(en).toLowerCase() + '_' + (kind || 'en') + '.mp3?v=' + ASSET_V);
     const fallback = () => { if ((kind || 'en') === 'en') speakEnTop(en); else speak(en, null); };
     const a = new Audio(file);
     _wEl = a;
@@ -846,8 +942,8 @@
     });
     const doneCount = Object.keys(exDone).length;
 
-    // 真人语音：用预生成的晓晓片段拼接（向导点评部分按家长所选风格切换）
-    const map = window.AUDIO_MAP && window.AUDIO_MAP[les.id];
+    // 真人语音：用预生成的片段拼接（向导点评部分按家长所选风格切换）；性别随家长所选切换
+    const map = audioMap() && audioMap()[les.id];
     const learn = window.AUDIO_LEARN;
     if (map && map.takeaway) {
       voicePlayOnce('takeaway:' + les.id, learnSegAlt(map.takeaway), btn || null); // 学习成果 = 知识点回顾（口语化，按风格选音）；结尾点评段已移到「第一次提交作业」时播放，平时不播
@@ -863,6 +959,8 @@
     data.chapters.forEach((ch) => ch.lessons.forEach((l) => arr.push(l)));
     return arr;
   }
+  // 仅含学生课（排除家长课）：用于进度/勋章/横幅等面向孩子的统计
+  function studentLessons() { return flatLessons().filter((l) => !l.forParent); }
   // 家长解锁：爬虫教程版面向 14+ 自学者，默认全部开放、无需解锁（保留逻辑以备将来切回少儿版）
   function isUnlocked(lesson) {
     return true;
@@ -1033,13 +1131,16 @@ CQIDAQAB
     $('#parent-btn').onclick = openParentPanel;
     window.addEventListener('beforeunload', accumulateStudyTime);
     initScrollFab();
+    // 刷新不丢位置：先恢复上次所在首页分区（学生园地/毕业典礼等），再决定是否直接重开某课
+    const s0 = loadSession();
+    homeViewName = s0.homeViewName || 'hub';
     renderHome();
     const lv0 = document.getElementById('lesson-view');
     if (lv0) lv0.addEventListener('scroll', function () { const s = loadSession(); s.scroll = s.scroll || {}; if (currentLesson) { s.scroll[currentLesson.id] = lv0.scrollTop; writeSession(s); } });
     // 刷新不丢进度：若上次停在某课，自动重新打开并恢复滚动/答案
-    const s0 = loadSession();
     if (s0.openId) { const l = findLesson(s0.openId); if (l) openLesson(l); }
     updateProgress();
+    checkAllBadges(); // 启动时同步一次勋章（已得章不会重复庆祝）
   }
 
   // ===== 一键向上 / 向下 悬浮按钮 =====
@@ -1072,20 +1173,17 @@ CQIDAQAB
 
   // 首页视图状态：'hub' 枢纽 / 'parent' 家长课程列表 / 'student' 学生课程列表 / 'student-zone' 学生园地
   let homeViewName = 'hub';
-  // 全部可能获得的勋章（按 award.p 去重，用于荣誉架剪影）
-  function allAwards() {
-    const seen = {}; const arr = [];
-    flatLessons().forEach((l) => {
-      if (l.award && !seen[l.award.p]) { seen[l.award.p] = 1; arr.push({ p: l.award.p, title: l.award.title, badge: l.award.badge, desc: l.award.desc || '' }); }
-    });
-    return arr.sort((a, b) => a.p - b.p);
-  }
+  // 全部可能获得的勋章（声明于 BADGE_DEFS，用于荣誉架剪影）
+  function allAwards() { return allAwardDefs(); }
   function renderHome() {
     $('#lesson-view').style.display = 'none';
     $('#home-view').style.display = 'block';
+    // 记住当前所在的首页分区，刷新后停在原处（不丢回首页）
+    const s = loadSession(); s.homeViewName = homeViewName; writeSession(s);
     if (homeViewName === 'parent') return renderCourseList('parent');
     if (homeViewName === 'student') return renderCourseList('student');
     if (homeViewName === 'student-zone') return renderStudentZone();
+    if (homeViewName === 'grad') return renderGradHub();
     return renderHub();
   }
   // 一张课的卡片（枢纽/列表共用）
@@ -1127,7 +1225,7 @@ CQIDAQAB
     banner.className = 'home-banner';
     banner.innerHTML = '<h1>👋 欢迎，' + childName() + (worn ? ' <span class="worn-badge">' + worn.badge + ' ' + worn.title + '</span>' : '') + '！准备好写你的第一个爬虫了吗？</h1>' +
       '<p>这是一套爬虫实战课：从 Python 基本功、看懂网页与 HTTP，一路打到能独立写爬虫小脚本。</p>' +
-      '<p style="margin-top:8px;color:#1f3a5f;background:#eaf3ff;display:inline-block;padding:6px 12px;border-radius:8px">🕷️ 共 11 章 40 节，每节看完讲义、做练习、勾掉动手任务即可；代码课还能在页面里真跑。</p>';
+      '<p style="margin-top:8px;color:#1f3a5f;background:#eaf3ff;display:inline-block;padding:6px 12px;border-radius:8px">🕷️ 共 ' + data.chapters.filter((c) => c.lessons.some((l) => !l.forParent)).length + ' 章 ' + studentLessons().length + ' 节，每节看完讲义、做练习、勾掉动手任务即可；代码课还能在页面里真跑。</p>';
     home.appendChild(banner);
 
     // 分区入口
@@ -1176,9 +1274,10 @@ CQIDAQAB
           '<div class="m-title">' + escapeHtml(a.title) + '</div>' +
           (on ? '<div class="m-on">佩戴中</div>' : '') + '</div>';
       }
-      return '<div class="hs-medal locked" title="完成对应关卡即可获得">' +
-        '<div class="m-badge">❔</div>' +
-        '<div class="m-title">未解锁</div></div>';
+      return '<div class="hs-medal locked" title="' + escapeHtml(a.desc) + '">' +
+        '<div class="m-badge">' + a.badge + '</div>' +
+        '<div class="m-title">' + escapeHtml(a.title) + '</div>' +
+        '<div class="m-lock">未点亮</div></div>';
     }).join('');
     const got = loadBadges().length, total = awards.length;
     shelf.innerHTML = '<div class="hs-title">🏅 荣誉架<span class="hs-count">已得 ' + got + ' / ' + total + '</span></div>' +
@@ -1346,7 +1445,7 @@ CQIDAQAB
       { key: 'wordbank', icon: '📚', color: '#3cc6ff', title: '单词本', desc: '本工具全部单词，可顺序播放、勾选读解释，方便磨耳朵', act: () => openWordBankAll() },
       { key: 'practice', icon: '⌨️', color: '#5bc0a8', title: '单词练习', desc: '练习敲写全部单词；敲错的词单独收进「练习错词本」', act: () => openPracticeHub() },
       { key: 'dictate', icon: '✍️', color: '#7b8cff', title: '单词听写', desc: '只听发音默写单词；听写敲错的词单独收进「听写错词本」', act: () => openDictateHub() },
-      { key: 'grad', icon: '🎓', color: '#ffcf3c', title: '毕业典礼回顾', desc: '重温最后的毕业考试，挑战那 9 道编程题', act: () => { const g = findLesson('grad'); if (g) openLesson(g); } },
+      { key: 'grad', icon: '🎓', color: '#ffcf3c', title: '毕业典礼回顾', desc: '两个全新实战项目：汇率·金价走势记录器 / 我的文章收藏夹，外加课后真跑指南', act: () => renderGradHub() },
       { key: 'codepro', icon: '🛠️', color: '#ff9a3c', title: '初级项目练习（简单）', desc: '20 道趣味小项目（填空 + 写代码），给学得快的孩子练手，打好编程底子', act: () => openCodePractice('projects') },
       { key: 'codeadv', icon: '🚀', color: '#9b6bff', title: '中级项目练习（难）', desc: '25 道进阶项目（填空 + 写代码），挑战思维极限', act: () => openCodePractice('advanced') },
       { key: 'codehard', icon: '🏆', color: '#ff5c8a', title: '高级项目练习（实战）', desc: '3 道综合实战项目（写完整函数），模拟真实爬虫流水线，挑战综合能力', act: () => openCodePractice('hard') }
@@ -1363,6 +1462,41 @@ CQIDAQAB
     });
     home.appendChild(grid);
     home.appendChild(buildCodePracticeAchievements());
+    refreshScrollFab();
+  }
+
+  // 毕业典礼回顾：三个实战项目枢纽（学生园地里点「毕业典礼回顾」进入）
+  function renderGradHub() {
+    // 标记为当前视图，刷新后停在这里而非回到首页
+    homeViewName = 'grad';
+    const s = loadSession(); s.homeViewName = 'grad'; writeSession(s);
+    const home = $('#home-view');
+    home.innerHTML = '';
+    const head = document.createElement('div');
+    head.className = 'list-head';
+    head.innerHTML = '<button class="back-home" id="back-grad">← 返回学生园地</button>' +
+      '<h2 class="list-title">🎓 毕业典礼回顾 · 三个实战项目</h2>';
+    home.appendChild(head);
+    $('#back-grad').onclick = () => { homeViewName = 'student-zone'; renderHome(); };
+    const grid = document.createElement('div');
+    grid.className = 'zone-grid';
+    const projs = [
+      { id: 'grad1', icon: '💱', color: '#3cc6ff', title: '项目① 汇率·金价走势记录器', desc: '每日汇率/金价追加成 CSV 走势表：练「接口取数→追加写文件」' },
+      { id: 'grad2', icon: '📚', color: '#9b6bff', title: '项目② 我的文章收藏夹', desc: '抓文章正文存成干净 .md：练「HTML→正文提取→存文本」' },
+      { id: 'grad4', icon: '🚀', color: '#5bc0a8', title: '课后真跑指南', desc: '两项目的真实可联网代码，复制去你电脑跑出真文件' }
+    ];
+    projs.forEach(function (p) {
+      const g = findLesson(p.id);
+      const tile = document.createElement('div');
+      tile.className = 'zone-tile';
+      tile.style.setProperty('--zc', p.color);
+      tile.innerHTML = '<div class="zt-icon">' + (ICON[p.id] || p.icon) + '</div>' +
+        '<div class="zt-title">' + p.title + '</div>' +
+        '<div class="zt-desc">' + p.desc + '</div>';
+      tile.onclick = function () { if (g) openLesson(g); };
+      grid.appendChild(tile);
+    });
+    home.appendChild(grid);
     refreshScrollFab();
   }
 
@@ -1447,8 +1581,8 @@ CQIDAQAB
     const zhChk = m.querySelector('#wb-zh');
     try { if (zhChk) zhChk.checked = localStorage.getItem('wordbank_readexpl') === '1'; } catch (e) {}
     if (zhChk) zhChk.onchange = () => { try { localStorage.setItem('wordbank_readexpl', zhChk.checked ? '1' : '0'); } catch (e) {} };
-    function enSrcOf(w) { if (w.enAudio) { return w.enAudio.indexOf('?') === -1 && w.enAudio.indexOf('audio/') === 0 ? w.enAudio + '?v=' + ASSET_V : w.enAudio; } return 'audio/words/' + String(w.en).toLowerCase() + '_en.mp3?v=' + ASSET_V; }
-    function zhSrcOf(w) { if (w.zhAudio) { return w.zhAudio.indexOf('?') === -1 && w.zhAudio.indexOf('audio/') === 0 ? w.zhAudio + '?v=' + ASSET_V : w.zhAudio; } return 'audio/words/' + String(w.en).toLowerCase() + '_zh.mp3?v=' + ASSET_V; }
+    function enSrcOf(w) { let s; if (w.enAudio) { s = w.enAudio.indexOf('?') === -1 && w.enAudio.indexOf('audio/') === 0 ? w.enAudio + '?v=' + ASSET_V : w.enAudio; } else { s = 'audio/words/' + String(w.en).toLowerCase() + '_en.mp3?v=' + ASSET_V; } return gpath(s); }
+    function zhSrcOf(w) { let s; if (w.zhAudio) { s = w.zhAudio.indexOf('?') === -1 && w.zhAudio.indexOf('audio/') === 0 ? w.zhAudio + '?v=' + ASSET_V : w.zhAudio; } else { s = 'audio/words/' + String(w.en).toLowerCase() + '_zh.mp3?v=' + ASSET_V; } return gpath(s); }
     // 读完英文后按需读中文（带停顿，避免和英文重叠）
     function afterEn(w, withZh, cb) {
       if (withZh && w.zh) {
@@ -1691,7 +1825,7 @@ CQIDAQAB
   function collectAllWords() {
     const seen = new Set();
     const list = [];
-    flatLessons().forEach((les) => {
+    studentLessons().forEach((les) => {
       (les.words || []).forEach((w) => {
         const k = String((w && w.en) || '').toLowerCase();
         if (!k || seen.has(k)) return;
@@ -1773,9 +1907,9 @@ CQIDAQAB
     // 计算一个词的最佳英文发音音频地址：优先用显式 enAudio，否则用 audio/words/<en>_en.mp3（真人发音）
     function wordEnSrc(w) {
       if (w.enAudio) {
-        return w.enAudio.indexOf('?') === -1 && w.enAudio.indexOf('audio/') === 0 ? w.enAudio + '?v=' + ASSET_V : w.enAudio;
+        return gpath(w.enAudio.indexOf('?') === -1 && w.enAudio.indexOf('audio/') === 0 ? w.enAudio + '?v=' + ASSET_V : w.enAudio);
       }
-      if (w.en) return 'audio/words/' + String(w.en).toLowerCase() + '_en.mp3?v=' + ASSET_V;
+      if (w.en) return gpath('audio/words/' + String(w.en).toLowerCase() + '_en.mp3?v=' + ASSET_V);
       return null;
     }
     function hear() {
@@ -1801,9 +1935,9 @@ CQIDAQAB
     // 计算一个词的最佳中文解释发音地址：优先用显式 zhAudio，否则用 audio/words/<en>_zh.mp3（真人发音）
     function wordZhSrc(w) {
       if (w.zhAudio) {
-        return w.zhAudio.indexOf('?') === -1 && w.zhAudio.indexOf('audio/') === 0 ? w.zhAudio + '?v=' + ASSET_V : w.zhAudio;
+        return gpath(w.zhAudio.indexOf('?') === -1 && w.zhAudio.indexOf('audio/') === 0 ? w.zhAudio + '?v=' + ASSET_V : w.zhAudio);
       }
-      if (w.en) return 'audio/words/' + String(w.en).toLowerCase() + '_zh.mp3?v=' + ASSET_V;
+      if (w.en) return gpath('audio/words/' + String(w.en).toLowerCase() + '_zh.mp3?v=' + ASSET_V);
       return null;
     }
     // 读中文解释：优先真人中文 mp3，缺失则浏览器中文 TTS（晓晓）兜底
@@ -2109,7 +2243,7 @@ CQIDAQAB
   }
   function openParentPanel() { promptPin(showParentPanelContent); }
   function showParentPanelContent() {
-    const flat = flatLessons();
+    const flat = studentLessons();
 
     // 推荐解锁的下一课（折叠态用）：第一门还锁着的课
     const recUnlock = flat.find((l) => !isUnlocked(l)) || null;
@@ -2198,6 +2332,34 @@ CQIDAQAB
       ? '<div class="pp-summary">' + reportSummary + '</div>'
       : '<div class="pp-body">' + reportRows + '</div>';
 
+    // === 课程反馈结果：面向家长的 consolidated 汇总（一眼掌握）===
+    const fbDone = flat.filter((l) => progress[l.id] && progress[l.id].done).length;
+    const fbTotal = flat.length;
+    const fbPct = fbTotal ? Math.round((fbDone / fbTotal) * 100) : 0;
+    let fbTime = 0;
+    flat.forEach((l) => { fbTime += (progress[l.id] || {}).studyTime || 0; });
+    const fbBadges = loadBadges().length;
+    const fbBadgeTotal = allAwards().length;
+    const examRows = EXAM_BADGES.map((e) => {
+      const r = examRatio(e.id);
+      const pass = r >= 0.8;
+      const rtxt = r < 0 ? '未考' : (Math.round(r * 100) + '%');
+      const stxt = pass ? '已过关' : (r < 0 ? '未考' : '未过关');
+      return '<div class="pp-row"><span class="pp-name">' + e.badge + ' ' + escapeHtml(e.title) + '</span>' +
+        '<span class="pp-badge ' + (pass ? 'st-done' : 'st-lock') + '">' + stxt + '</span>' +
+        '<span class="pp-rate">' + rtxt + '</span></div>';
+    }).join('');
+    const feedbackSection = '<div class="pp-section pp-feedback">' +
+      '<div class="pp-h"><span class="pp-ico">📈</span>课程反馈结果</div>' +
+      '<div class="fb-grid">' +
+        '<div class="fb-cell"><div class="fb-num">' + fbDone + '/' + fbTotal + '</div><div class="fb-lab">已完成课程</div></div>' +
+        '<div class="fb-cell"><div class="fb-num">' + fbPct + '%</div><div class="fb-lab">总进度</div></div>' +
+        '<div class="fb-cell"><div class="fb-num">' + fbBadges + '/' + fbBadgeTotal + '</div><div class="fb-lab">已得勋章</div></div>' +
+        '<div class="fb-cell"><div class="fb-num">' + fmtTime(fbTime) + '</div><div class="fb-lab">累计学习</div></div>' +
+      '</div>' +
+      (examRows ? '<div class="fb-exams-title">阶段考过关情况</div><div class="fb-exams">' + examRows + '</div>' : '') +
+      '</div>';
+
     showModal(
       '<button class="modal-x" id="pp-x" aria-label="关闭">✕</button>' +
       '<h3 class="modal-title">' + ICON.family + '家长面板</h3>' +
@@ -2214,6 +2376,14 @@ CQIDAQAB
           STYLES.map((s) => '<button class="style-opt' + (loadStyle() === s.id ? ' on' : '') + '" data-style="' + s.id + '">' + s.label + '</button>').join('') +
         '</div>' +
       '</div>' +
+      // 语音性别（男声云希 / 女声晓晓）
+      '<div class="pp-section pp-theme-gender">' +
+        '<div class="pp-h"><span class="pp-ico">' + ICON.style + '</span>语音性别（向导音色）</div>' +
+        '<div class="style-pick">' +
+          GENDERS.map((g) => '<button class="gender-opt' + (loadGender() === g.id ? ' on' : '') + '" data-gender="' + g.id + '">' + g.label + '</button>').join('') +
+        '</div>' +
+        '<p class="pp-tip-sm">两套真人语音都已备好：男声（云希）/ 女声（晓晓）。切换后立即对所有讲解、小结、习题、单词、讲一讲生效。</p>' +
+      '</div>' +
       // 课程解锁状态（可折叠）
       '<div class="pp-section pp-theme-unlock">' +
         '<div class="pp-h collapsible" data-sec="unlock">' + chev(ppCollapsed.unlock) + '<span class="pp-ico">' + ICON.unlock + '</span>课程解锁状态</div>' +
@@ -2224,6 +2394,8 @@ CQIDAQAB
         '<div class="pp-h collapsible" data-sec="report">' + chev(ppCollapsed.report) + '<span class="pp-ico">' + ICON.report + '</span>学习报告</div>' +
         secReport +
       '</div>' +
+      // 课程反馈结果（汇总）
+      feedbackSection +
       // 修改家长密码
       '<div class="pp-section pp-theme-pwd">' +
         '<div class="pp-h"><span class="pp-ico">' + ICON.pwd + '</span>修改家长密码</div>' +
@@ -2275,6 +2447,15 @@ CQIDAQAB
         saveStyle(b.dataset.style);
         const lab = (STYLES.find((s) => s.id === b.dataset.style) || {}).label || '';
         toast('语音风格已切换为：' + lab);
+        showParentPanelContent(); // 重渲染，刷新选中态
+      };
+    });
+    // 语音性别切换（男声/女声），立即对所有真人语音生效
+    $('#modal').querySelectorAll('.gender-opt').forEach((b) => {
+      b.onclick = () => {
+        saveGender(b.dataset.gender);
+        const lab = (GENDERS.find((g) => g.id === b.dataset.gender) || {}).label || '';
+        toast('语音性别已切换为：' + lab);
         showParentPanelContent(); // 重渲染，刷新选中态
       };
     });
@@ -2461,6 +2642,7 @@ CQIDAQAB
           localStorage.setItem(tkey, JSON.stringify(done));
           ck.closest('.task-item').classList.toggle('done', ck.checked);
           updTaskProgress();
+          checkAllBadges(); // 任务勾选可能触发「动手达人」徽章
         };
       });
       updTaskProgress();
@@ -2468,9 +2650,9 @@ CQIDAQAB
     const stb = c.querySelector('#speak-takeaway');
     if (stb) stb.onclick = function () {
       if (!currentLesson) return;
-      const map = window.AUDIO_MAP && window.AUDIO_MAP[currentLesson.id];
+      const map = audioMap() && audioMap()[currentLesson.id];
       if (map && map.takeaway) {
-        voicePlayOnce('takeaway:' + currentLesson.id, learnSegAlt(map.takeaway), stb); // 真人男生声
+        voicePlayOnce('takeaway:' + currentLesson.id, learnSegAlt(map.takeaway), stb); // 真人声（随性别切换）
         return;
       }
       speak(currentLesson.takeaway || '', stb); // 兜底：无预生成语音时用浏览器 TTS
@@ -2496,7 +2678,7 @@ CQIDAQAB
         // 只有在展开字幕时才播放语音；收起时上面已经停止
         if (document.getElementById('talk-box').style.display === 'block') {
           // 回退：风格文件尚在生成时，用已存在的 narrate.mp3（gentle 内容）
-          startVoice('audio/' + currentLesson.id + '/narrate.mp3?v=' + ASSET_V, sv);
+          startVoice(gpath('audio/' + currentLesson.id + '/narrate.mp3?v=' + ASSET_V), sv);
         }
       };
     }
@@ -2509,10 +2691,19 @@ CQIDAQAB
         const lesId = currentLesson.id;
         if (progress[lesId] && progress[lesId].done) return; // 已提交过，避免重复播报
         const lesObj = findLesson(lesId);
-        const state = evalStateOf(lesObj);
-        if (state === 'notDone') {
-          toast(pickEval('notDone', loadStyle()));
-          return;
+        const isExam = lesObj.type === 'exam';
+        if (isExam) {
+          // 阶段考：首次正确率 < 80% 不能过关，可回去重做，不限次数
+          if (examRatio(lesId) < 0.8) {
+            toast('阶段考需「首次作答正确率 ≥80%」才能过关，回去再检查一下重做～可重复挑战', 5200);
+            return;
+          }
+        } else {
+          const state = evalStateOf(lesObj);
+          if (state === 'notDone') {
+            toast(pickEval('notDone', loadStyle()));
+            return;
+          }
         }
         const pr = progress[lesId] || {};
         const skippedKeys = Object.keys(pr.exSkipped || {});
@@ -2520,9 +2711,9 @@ CQIDAQAB
           ensureLessonRecord(lesId);
           progress[lesId].done = true;
           saveProgress(); updateProgress();
-          awardIfNeeded(lesObj); // 只有全部做对（含补做）才授勋章
+          checkAllBadges(); // 全局扫描发章（章节/毕业/过程/阶段考）
           const bar = c.querySelector('#submit-bar');
-          if (bar) { bar.innerHTML = '<span class="finish-done">✅ 本节已提交</span>'; bar.style.display = 'block'; }
+          if (bar) { bar.innerHTML = '<span class="finish-done">✅ ' + (isExam ? '已过关' : '本节已提交') + '</span>'; bar.style.display = 'block'; }
           launchConfetti();
           if (skippedKeys.length > 0) {
             toast('⏭ 还有 ' + skippedKeys.length + ' 题待补做，补做完就能拿勋章～', 4800);
@@ -2546,7 +2737,7 @@ CQIDAQAB
       ensureLessonRecord(les.id);
       progress[les.id].done = true;
       saveProgress(); updateProgress();
-      awardIfNeeded(les); // 总结课/毕业课完成 → 授予勋章（不重复）
+      checkAllBadges(); // 全局扫描发章（不重复）
       launchConfetti();
       if (les.award) {
         toast(pickAwardMsg(les.award), 4800);
@@ -2559,7 +2750,7 @@ CQIDAQAB
     const sl = c.querySelector('#speak-lecture');
     if (sl) sl.onclick = () => {
       if (!currentLesson) return;
-      const map = window.AUDIO_MAP && window.AUDIO_MAP[currentLesson.id];
+      const map = audioMap() && audioMap()[currentLesson.id];
       if (map && map.lecture && map.lecture.length) {
         voicePlaySeq('lecture:' + currentLesson.id, map.lecture, sl);
         return;
@@ -2849,8 +3040,8 @@ CQIDAQAB
           fb.innerHTML = (ok ? '✅ ' + childName() + '，选对啦！' : '❌') + (ex.explain ? '<br>' + escapeHtml(ex.explain) : '');
           if (ok) { playCorrect(); startVoice(vfile('common/fb_right')); markExerciseDone(idx); }
           else { playWrong(); startVoice(vfile('common/fb_wrong')); }
-        } else if (btn.dataset.act === 'speak-q') {
-          const map = window.AUDIO_MAP && window.AUDIO_MAP[currentLesson.id];
+          } else if (btn.dataset.act === 'speak-q') {
+          const map = audioMap() && audioMap()[currentLesson.id];
           const exAudio = map && map.exercises && map.exercises[idx];
           if (exAudio && exAudio.length) {
             voicePlaySeq('ex:' + currentLesson.id + ':' + idx, exAudio, btn);
@@ -3058,20 +3249,16 @@ CQIDAQAB
     saveProgress();
     updateProgress();
     refreshSubmitBar();
-    // 本节已提交、且现在全部做对（含补做）→ 自动补发勋章 + 庆祝
-    if (progress[lesId].done && les.award && evalStateOf(les) === 'allCorrect') {
-      const had = loadBadges().some((x) => x.p === les.award.p);
-      awardIfNeeded(les);
-      if (!had) { launchConfetti(); toast(pickAwardMsg(les.award), 4800); }
-    }
+    // 本节已提交、且现在全部做对（含补做）→ 重新扫描发章（章节/毕业/过程徽章可能刚达成）
+    if (progress[lesId].done) checkAllBadges();
   }
 
   function updateProgress() {
     let total = 0, done = 0;
-    data.chapters.forEach((ch) => ch.lessons.forEach((l) => {
+    studentLessons().forEach((l) => {
       total++;
       if (progress[l.id] && progress[l.id].done) done++;
-    }));
+    });
     const pct = total ? Math.round((done / total) * 100) : 0;
     $('#progress-text').textContent = '进度 ' + pct + '%';
   }

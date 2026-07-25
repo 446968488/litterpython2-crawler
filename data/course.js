@@ -117,18 +117,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "API",
-       "zh": "接口：网站用来拉取数据的网址，常返回现成的 JSON",
-       "pron": "api*"
+       "zh": "接口：网站用来拉取数据的网址，常返回现成的 JSON"
       },
       {
        "en": "DASHBOARD",
-       "zh": "看板：把多个数据集中展示的页面/面板",
-       "pron": "ˈdæʃˌbɔrd"
+       "zh": "看板：把多个数据集中展示的页面/面板"
       },
       {
        "en": "BATCH",
-       "zh": "批量：一次性对一堆目标做同样操作",
-       "pron": "bæʧ"
+       "zh": "批量：一次性对一堆目标做同样操作"
       }
      ],
      "exercises": [
@@ -212,18 +209,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "ROBOTS",
-       "zh": "robots.txt：网站根的告示文件，写明哪些路径允许/禁止爬取",
-       "pron": "ˈroʊˌbəts"
+       "zh": "robots.txt：网站根的告示文件，写明哪些路径允许/禁止爬取"
       },
       {
        "en": "PRIVACY",
-       "zh": "隐私：个人身份相关数据，抓取它法律风险极高",
-       "pron": "ˈpraɪvəsi"
+       "zh": "隐私：个人身份相关数据，抓取它法律风险极高"
       },
       {
        "en": "COMPLIANCE",
-       "zh": "合规：遵守法律与网站规则，爬虫的长期生存之道",
-       "pron": "kəmˈplaɪəns"
+       "zh": "合规：遵守法律与网站规则，爬虫的长期生存之道"
       }
      ],
      "exercises": [
@@ -308,18 +302,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "STRING",
-       "zh": "字符串：用引号括起来的一串文字，如 \"hello\"",
-       "pron": "strɪŋ"
+       "zh": "字符串：用引号括起来的一串文字，如 \"hello\""
       },
       {
        "en": "LIST",
-       "zh": "列表：用方括号装的一排数据，可随时增减",
-       "pron": "lɪst"
+       "zh": "列表：用方括号装的一排数据，可随时增减"
       },
       {
        "en": "SLICE",
-       "zh": "切片：从序列切出一段，如 s[0:6] 左闭右开",
-       "pron": "slaɪs"
+       "zh": "切片：从序列切出一段，如 s[0:6] 左闭右开"
       }
      ],
      "exercises": [
@@ -396,18 +387,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "DICT",
-       "zh": "字典：用 键:值 成对存储，按名字快速取，如 {\"name\":\"小明\"}",
-       "pron": "dict*"
+       "zh": "字典：用 键:值 成对存储，按名字快速取，如 {\"name\":\"小明\"}"
       },
       {
        "en": "KEY",
-       "zh": "键：字典里用来找值的名字",
-       "pron": "ki"
+       "zh": "键：字典里用来找值的名字"
       },
       {
        "en": "VALUE",
-       "zh": "值：键对应的内容",
-       "pron": "ˈvælju"
+       "zh": "值：键对应的内容"
       }
      ],
      "exercises": [
@@ -484,18 +472,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "FILE",
-       "zh": "文件：把数据存到磁盘的载体，如 data.txt",
-       "pron": "faɪl"
+       "zh": "文件：把数据存到磁盘的载体，如 data.txt"
       },
       {
        "en": "UTF8",
-       "zh": "UTF-8：最常用字符编码，写中文务必指定它防乱码",
-       "pron": "utf8*"
+       "zh": "UTF-8：最常用字符编码，写中文务必指定它防乱码"
       },
       {
        "en": "EXCEPT",
-       "zh": "异常捕获：用 try/except 接住可能出错的地方",
-       "pron": "ɪkˈsɛpt"
+       "zh": "异常捕获：用 try/except 接住可能出错的地方"
       }
      ],
      "exercises": [
@@ -565,18 +550,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "FUNCTION",
-       "zh": "函数：用 def 定义、可重复调用的代码块",
-       "pron": "ˈfəŋkʃən"
+       "zh": "函数：用 def 定义、可重复调用的代码块"
       },
       {
        "en": "MODULE",
-       "zh": "模块：一个 .py 工具箱，import 后使用",
-       "pron": "ˈmɑʤul"
+       "zh": "模块：一个 .py 工具箱，import 后使用"
       },
       {
        "en": "PIP",
-       "zh": "pip：Python 的包管理器，用来安装第三方库",
-       "pron": "pɪp"
+       "zh": "pip：Python 的包管理器，用来安装第三方库"
       }
      ],
      "exercises": [
@@ -645,18 +627,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "COMPREHENSION",
-       "zh": "推导式：一行生成/加工列表的语法糖，如 [x*2 for x in a]",
-       "pron": "ˌkɑmpriˈhɛnʃən"
+       "zh": "推导式：一行生成/加工列表的语法糖，如 [x*2 for x in a]"
       },
       {
        "en": "LAMBDA",
-       "zh": "lambda：匿名小函数，常用于排序/筛选的 key",
-       "pron": "ˈlæmdə"
+       "zh": "lambda：匿名小函数，常用于排序/筛选的 key"
       },
       {
        "en": "READABLE",
-       "zh": "可读性：代码让人看懂比炫技更重要",
-       "pron": "ˈridəbəl"
+       "zh": "可读性：代码让人看懂比炫技更重要"
       }
      ],
      "exercises": [
@@ -744,18 +723,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "HTML",
-       "zh": "HTML：网页的标记语言，用标签描述结构与内容",
-       "pron": "html*"
+       "zh": "HTML：网页的标记语言，用标签描述结构与内容"
       },
       {
        "en": "TAG",
-       "zh": "标签：如 <p> 段落、<a> 链接，成对或自闭合",
-       "pron": "tæg"
+       "zh": "标签：如 <p> 段落、<a> 链接，成对或自闭合"
       },
       {
        "en": "ATTRIBUTE",
-       "zh": "属性：标签上的附加信息，如 <a href=\"...\"> 里的链接地址",
-       "pron": "əˈtrɪˌbjut"
+       "zh": "属性：标签上的附加信息，如 <a href=\"...\"> 里的链接地址"
       }
      ],
      "exercises": [
@@ -835,18 +811,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "DEVTOOLS",
-       "zh": "开发者工具：浏览器内置审查面板，按 F12 打开",
-       "pron": "devtools*"
+       "zh": "开发者工具：浏览器内置审查面板，按 F12 打开"
       },
       {
        "en": "NETWORK",
-       "zh": "Network 面板：记录所有网络请求，找接口和数据的入口",
-       "pron": "ˈnɛtˌwərk"
+       "zh": "Network 面板：记录所有网络请求，找接口和数据的入口"
       },
       {
        "en": "CONSOLE",
-       "zh": "Console 控制台：看报错、试小段代码的地方",
-       "pron": "ˈkɑnsoʊl"
+       "zh": "Console 控制台：看报错、试小段代码的地方"
       }
      ],
      "exercises": [
@@ -932,18 +905,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "URL",
-       "zh": "URL：统一资源定位符，即网址",
-       "pron": "url*"
+       "zh": "URL：统一资源定位符，即网址"
       },
       {
        "en": "QUERY",
-       "zh": "查询参数：URL 里 ? 后面的 k=v，多个用 & 连接",
-       "pron": "kˈwiri"
+       "zh": "查询参数：URL 里 ? 后面的 k=v，多个用 & 连接"
       },
       {
        "en": "RESPONSE",
-       "zh": "响应：服务器收到请求后返回的内容",
-       "pron": "rɪˈspɑns"
+       "zh": "响应：服务器收到请求后返回的内容"
       }
      ],
      "exercises": [
@@ -1030,18 +1000,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "STATUS",
-       "zh": "状态码：响应里三位数，表明请求结果（200成功等）",
-       "pron": "ˈstætəs"
+       "zh": "状态码：响应里三位数，表明请求结果（200成功等）"
       },
       {
        "en": "ENCODING",
-       "zh": "编码：字符如何变成字节，中文常用 utf-8/gbk",
-       "pron": "ɛnˈkoʊdɪŋ"
+       "zh": "编码：字符如何变成字节，中文常用 utf-8/gbk"
       },
       {
        "en": "REDIRECT",
-       "zh": "重定向：301/302，地址跳转，爬虫要跟随",
-       "pron": "ˌridərˈɛkt"
+       "zh": "重定向：301/302，地址跳转，爬虫要跟随"
       }
      ],
      "exercises": [
@@ -1127,18 +1094,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "GET",
-       "zh": "GET：最常用的请求方法，用来\"取\"资源",
-       "pron": "gɪt"
+       "zh": "GET：最常用的请求方法，用来\"取\"资源"
       },
       {
        "en": "RESPONSE",
-       "zh": "响应对象：requests 拿到的结果，含状态码和正文",
-       "pron": "rɪˈspɑns"
+       "zh": "响应对象：requests 拿到的结果，含状态码和正文"
       },
       {
        "en": "TEXT",
-       "zh": "r.text：响应正文，HTML 或 JSON 的字符串",
-       "pron": "tɛkst"
+       "zh": "r.text：响应正文，HTML 或 JSON 的字符串"
       }
      ],
      "exercises": [
@@ -1229,18 +1193,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "HEADER",
-       "zh": "请求头：请求里附带的自述信息，如 User-Agent",
-       "pron": "ˈhɛdər"
+       "zh": "请求头：请求里附带的自述信息，如 User-Agent"
       },
       {
        "en": "USERAGENT",
-       "zh": "User-Agent：表明\"我是谁/什么客户端\"的字段",
-       "pron": "useragent*"
+       "zh": "User-Agent：表明\"我是谁/什么客户端\"的字段"
       },
       {
        "en": "REFERER",
-       "zh": "Referer：表明\"从哪个页面过来\"，部分接口会校验",
-       "pron": "referer*"
+       "zh": "Referer：表明\"从哪个页面过来\"，部分接口会校验"
       }
      ],
      "exercises": [
@@ -1320,18 +1281,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "PARAMS",
-       "zh": "params：GET 请求的查询参数，requests 会自动拼到 URL",
-       "pron": "params*"
+       "zh": "params：GET 请求的查询参数，requests 会自动拼到 URL"
       },
       {
        "en": "POST",
-       "zh": "POST：把数据放请求体提交的请求方法",
-       "pron": "poʊst"
+       "zh": "POST：把数据放请求体提交的请求方法"
       },
       {
        "en": "FORM",
-       "zh": "表单：网页里收集用户输入再提交的结构，常走 POST",
-       "pron": "fɔrm"
+       "zh": "表单：网页里收集用户输入再提交的结构，常走 POST"
       }
      ],
      "exercises": [
@@ -1417,18 +1375,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "TIMEOUT",
-       "zh": "超时：请求等待的最长时间，到了就放弃，防卡死",
-       "pron": "ˈtaɪˌmaʊt"
+       "zh": "超时：请求等待的最长时间，到了就放弃，防卡死"
       },
       {
        "en": "RETRY",
-       "zh": "重试：失败后隔会儿再试一次，应对网络抖动",
-       "pron": "riˈtraɪ"
+       "zh": "重试：失败后隔会儿再试一次，应对网络抖动"
       },
       {
        "en": "SESSION",
-       "zh": "会话：用 Session() 复用 Cookie 与连接，保持登录态",
-       "pron": "ˈsɛʃən"
+       "zh": "会话：用 Session() 复用 Cookie 与连接，保持登录态"
       }
      ],
      "exercises": [
@@ -1519,18 +1474,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "STATUS",
-       "zh": "状态码：响应里三位数，表明请求结果",
-       "pron": "ˈstætəs"
+       "zh": "状态码：响应里三位数，表明请求结果"
       },
       {
        "en": "REDIRECT",
-       "zh": "重定向：3xx，requests 默认自动跟随",
-       "pron": "ˌridərˈɛkt"
+       "zh": "重定向：3xx，requests 默认自动跟随"
       },
       {
        "en": "THROTTLE",
-       "zh": "限流：429/503 表示被限速，需降速退避",
-       "pron": "θˈrɑtəl"
+       "zh": "限流：429/503 表示被限速，需降速退避"
       }
      ],
      "exercises": [
@@ -1600,6 +1552,113 @@ window.COURSE_DATA = {
       "统计你之前抓的一批 URL 的状态码分布，看看健康比例多少。"
      ],
      "color": "#d9536b"
+    },
+    {
+     "id": "exam1",
+     "title": "阶段考①：爬虫地基（入门·Python·网页）",
+     "icon": "📝",
+     "type": "exam",
+     "color": "#e0922f",
+     "markdown": "## 阶段考①：爬虫地基\n\n这一考覆盖 **入门启航 / Python 速通 / 网页与 HTTP** 三章。\n\n**规则**：8 题，首次作答正确率 ≥ 80%（至少 7 题首次即对）才能过关，获得「阶段考①过关」勋章。没过关可以回去复习、重新挑战，不限次数。\n\n把地基打牢，后面才跑得稳！",
+     "takeaway": "阶段考①过关 = 你真的理解了爬虫是什么、Python 怎么存数据、网页与 HTTP 怎么通信。地基稳了。",
+     "words": [],
+     "tasks": [],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "爬虫和普通手动浏览网页最大的不同是？",
+       "options": [
+        "自动、批量地发请求并解析数据",
+        "只看下一个页面",
+        "不需要网络"
+       ],
+       "answer": 0,
+       "explain": "爬虫=自动化、批量地取数据。"
+      },
+      {
+       "type": "choice",
+       "question": "下面哪个做法更合规？",
+       "options": [
+        "先看 robots.txt、控制频率、不抓隐私",
+        "不管 robots 硬爬",
+        "每秒请求上千次"
+       ],
+       "answer": 0,
+       "explain": "有教养的爬虫先看规矩。"
+      },
+      {
+       "type": "choice",
+       "question": "Python 里用哪个结构存「键值对」，比如 {'name':'Tom'}？",
+       "options": [
+        "字典 dict",
+        "列表 list",
+        "字符串 str"
+       ],
+       "answer": 0,
+       "explain": "字典用键找值。"
+      },
+      {
+       "type": "choice",
+       "question": "下面哪种写法能安全读写文件并自动关闭？",
+       "options": [
+        "with open(...) as f:",
+        "直接 open 不关",
+        "用 print 写文件"
+       ],
+       "answer": 0,
+       "explain": "with 语句自动关文件，防泄露。"
+      },
+      {
+       "type": "choice",
+       "question": "HTML 里 <a href=\"https://x.com\">链接</a>，要拿网址应取哪个属性？",
+       "options": [
+        "href",
+        "src",
+        "title"
+       ],
+       "answer": 0,
+       "explain": "a 标签的 href 是链接地址。"
+      },
+      {
+       "type": "choice",
+       "question": "URL `https://x.com/p?q=1` 中，`?q=1` 这部分叫？",
+       "options": [
+        "查询参数",
+        "主机名",
+        "协议"
+       ],
+       "answer": 0,
+       "explain": "问号后是查询参数，多个用 & 连。"
+      },
+      {
+       "type": "choice",
+       "question": "HTTP 状态码里，哪个表示请求成功（最常见）？",
+       "options": [
+        "200",
+        "404",
+        "500"
+       ],
+       "answer": 0,
+       "explain": "200=成功。"
+      },
+      {
+       "type": "tap",
+       "question": "以下哪些属于「有教养的爬虫」做法？（多选）",
+       "multi": true,
+       "options": [
+        "遵守 robots.txt",
+        "加延迟不刷爆对方服务器",
+        "不抓个人隐私数据",
+        "每秒请求 1000 次"
+       ],
+       "answer": [
+        0,
+        1,
+        2
+       ],
+       "explain": "前三个是礼貌爬虫，第四个是攻击行为。"
+      }
+     ]
     }
    ]
   },
@@ -1615,18 +1674,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "BEAUTIFULSOUP",
-       "zh": "BeautifulSoup(bs4)：把 HTML 解析成对象树、方便提取的库",
-       "pron": "beautifulsoup*"
+       "zh": "BeautifulSoup(bs4)：把 HTML 解析成对象树、方便提取的库"
       },
       {
        "en": "SOUP",
-       "zh": "soup：BeautifulSoup 解析后的文档对象，用来导航查找",
-       "pron": "sup"
+       "zh": "soup：BeautifulSoup 解析后的文档对象，用来导航查找"
       },
       {
        "en": "PARSER",
-       "zh": "解析器：把文本变成结构的东西，如 html.parser / lxml",
-       "pron": "ˈpɑrsər"
+       "zh": "解析器：把文本变成结构的东西，如 html.parser / lxml"
       }
      ],
      "exercises": [
@@ -1706,18 +1762,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "FIND",
-       "zh": "find：返回第一个匹配的标签",
-       "pron": "faɪnd"
+       "zh": "find：返回第一个匹配的标签"
       },
       {
        "en": "FINDALL",
-       "zh": "find_all：返回所有匹配的标签列表",
-       "pron": "findall*"
+       "zh": "find_all：返回所有匹配的标签列表"
       },
       {
        "en": "GETTEXT",
-       "zh": ".text / .get_text()：取标签里的文字；.get() 取属性",
-       "pron": "gettext*"
+       "zh": ".text / .get_text()：取标签里的文字；.get() 取属性"
       }
      ],
      "exercises": [
@@ -1797,18 +1850,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "SELECT",
-       "zh": "select：用 CSS 选择器查找元素，返回列表",
-       "pron": "səˈlɛkt"
+       "zh": "select：用 CSS 选择器查找元素，返回列表"
       },
       {
        "en": "SELECTOR",
-       "zh": "选择器：如 .class / #id / tag 的定位表达式",
-       "pron": "selector*"
+       "zh": "选择器：如 .class / #id / tag 的定位表达式"
       },
       {
        "en": "SELECTONE",
-       "zh": "select_one：用选择器取第一个匹配",
-       "pron": "selectone*"
+       "zh": "select_one：用选择器取第一个匹配"
       }
      ],
      "exercises": [
@@ -1888,18 +1938,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "GETTEXT",
-       "zh": ".get_text(strip=True)：取文字并去掉首尾空白",
-       "pron": "gettext*"
+       "zh": ".get_text(strip=True)：取文字并去掉首尾空白"
       },
       {
        "en": "ATTRIBUTE",
-       "zh": ".get(\"src\")：取标签属性（如图片/链接地址）",
-       "pron": "əˈtrɪˌbjut"
+       "zh": ".get(\"src\")：取标签属性（如图片/链接地址）"
       },
       {
        "en": "TRAVERSE",
-       "zh": "遍历：parent 父 / children 子 / sibling 兄弟",
-       "pron": "ˈtrævərs"
+       "zh": "遍历：parent 父 / children 子 / sibling 兄弟"
       }
      ],
      "exercises": [
@@ -1990,18 +2037,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "REGEX",
-       "zh": "正则(re)：用模式串匹配/提取文本的工具",
-       "pron": "regex*"
+       "zh": "正则(re)：用模式串匹配/提取文本的工具"
       },
       {
        "en": "PATTERN",
-       "zh": "模式：正则里描述\"要匹配啥\"的表达式",
-       "pron": "ˈpætərn"
+       "zh": "模式：正则里描述\"要匹配啥\"的表达式"
       },
       {
        "en": "FINDALL",
-       "zh": "re.findall：找出所有匹配，返回列表",
-       "pron": "findall*"
+       "zh": "re.findall：找出所有匹配，返回列表"
       }
      ],
      "exercises": [
@@ -2081,18 +2125,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "GROUP",
-       "zh": "分组：正则里 () 圈出要单独提取的片段",
-       "pron": "grup"
+       "zh": "分组：正则里 () 圈出要单独提取的片段"
       },
       {
        "en": "SUB",
-       "zh": "re.sub：按正则替换文本，如压空格",
-       "pron": "səb"
+       "zh": "re.sub：按正则替换文本，如压空格"
       },
       {
        "en": "SEARCH",
-       "zh": "re.search：找第一个匹配，返回可取分组的对象",
-       "pron": "sərʧ"
+       "zh": "re.search：找第一个匹配，返回可取分组的对象"
       }
      ],
      "exercises": [
@@ -2179,18 +2220,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "JSON",
-       "zh": "JSON：一种键值对/列表结构的数据格式，爬虫最爱",
-       "pron": "json*"
+       "zh": "JSON：一种键值对/列表结构的数据格式，爬虫最爱"
       },
       {
        "en": "API",
-       "zh": "接口：网站用来返回结构化数据（常是 JSON）的网址",
-       "pron": "api*"
+       "zh": "接口：网站用来返回结构化数据（常是 JSON）的网址"
       },
       {
        "en": "RJASON",
-       "zh": "r.json()：把响应 JSON 文本解析成 Python 对象",
-       "pron": "rjason*"
+       "zh": "r.json()：把响应 JSON 文本解析成 Python 对象"
       }
      ],
      "exercises": [
@@ -2275,18 +2313,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "CSV",
-       "zh": "CSV：逗号分隔的表格文本，Excel/数据库通用",
-       "pron": "csv*"
+       "zh": "CSV：逗号分隔的表格文本，Excel/数据库通用"
       },
       {
        "en": "DICTWRITER",
-       "zh": "DictWriter：按字段名把字典列表写成 CSV",
-       "pron": "dictwriter*"
+       "zh": "DictWriter：按字段名把字典列表写成 CSV"
       },
       {
        "en": "BOM",
-       "zh": "utf-8-sig：带 BOM 的 UTF-8，让 Excel 正确识别中文",
-       "pron": "bɑm"
+       "zh": "utf-8-sig：带 BOM 的 UTF-8，让 Excel 正确识别中文"
       }
      ],
      "exercises": [
@@ -2374,18 +2409,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "JSON",
-       "zh": "JSON：可表达嵌套（对象/数组）的数据格式",
-       "pron": "json*"
+       "zh": "JSON：可表达嵌套（对象/数组）的数据格式"
       },
       {
        "en": "DUMP",
-       "zh": "json.dump：把 Python 对象写入 JSON 文件",
-       "pron": "dəmp"
+       "zh": "json.dump：把 Python 对象写入 JSON 文件"
       },
       {
        "en": "ENSUREASCII",
-       "zh": "ensure_ascii=False：让中文正常写入而非转义",
-       "pron": "ensureascii*"
+       "zh": "ensure_ascii=False：让中文正常写入而非转义"
       }
      ],
      "exercises": [
@@ -2472,18 +2504,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "OPENPYXL",
-       "zh": "openpyxl：读写 .xlsx Excel 文件的库",
-       "pron": "openpyxl*"
+       "zh": "openpyxl：读写 .xlsx Excel 文件的库"
       },
       {
        "en": "WORKBOOK",
-       "zh": "Workbook：一个 Excel 工作簿对象",
-       "pron": "workbook*"
+       "zh": "Workbook：一个 Excel 工作簿对象"
       },
       {
        "en": "XLSX",
-       "zh": "xlsx：Excel 的现代文件格式，程序可直接生成",
-       "pron": "xlsx*"
+       "zh": "xlsx：Excel 的现代文件格式，程序可直接生成"
       }
      ],
      "exercises": [
@@ -2553,6 +2582,113 @@ window.COURSE_DATA = {
       "思考并记下：你最终要交付给谁？据此选 CSV / JSON / xlsx 其中一种作为默认落地格式。"
      ],
      "color": "#c77dff"
+    },
+    {
+     "id": "exam2",
+     "title": "阶段考②：抓取与解析（requests·bs4·正则JSON）",
+     "icon": "📝",
+     "type": "exam",
+     "color": "#2f8fe0",
+     "markdown": "## 阶段考②：抓取与解析\n\n覆盖 **requests 抓取 / BeautifulSoup 解析 / 正则与 JSON** 三章。\n\n**规则**：8 题，首次正确率 ≥ 80% 过关，得「阶段考②过关」勋章，可重复挑战。",
+     "takeaway": "阶段考②过关 = 你会发请求、用 bs4 抠数据、用正则和 JSON 吃结构化数据。抓取解析双翼已张。",
+     "words": [],
+     "tasks": [],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "requests 发出 GET 请求后，看状态码用？",
+       "options": [
+        "r.status_code",
+        "r.code",
+        "r.state"
+       ],
+       "answer": 0,
+       "explain": "响应对象的状态码是 r.status_code。"
+      },
+      {
+       "type": "choice",
+       "question": "伪装成浏览器，常用下面哪个请求头字段？",
+       "options": [
+        "User-Agent",
+        "Content-Length",
+        "Set-Cookie"
+       ],
+       "answer": 0,
+       "explain": "User-Agent 表明客户端身份。"
+      },
+      {
+       "type": "choice",
+       "question": "soup.find('div', class_='price') 找到的是？",
+       "options": [
+        "第一个 class 为 price 的 div",
+        "所有 price 元素",
+        "div 的父节点"
+       ],
+       "answer": 0,
+       "explain": "find 返回第一个匹配。"
+      },
+      {
+       "type": "choice",
+       "question": "CSS 选择器 `.item > a` 表示？",
+       "options": [
+        "class=item 元素下的「直接子」a 标签",
+        "所有带 item 类的 a",
+        "item 后面的兄弟 a"
+       ],
+       "answer": 0,
+       "explain": "> 表示直接子元素。"
+      },
+      {
+       "type": "choice",
+       "question": "正则里括号 `()` 的主要作用是？",
+       "options": [
+        "分组/捕获，方便单独取出",
+        "写注释",
+        "取反"
+       ],
+       "answer": 0,
+       "explain": "() 捕获分组。"
+      },
+      {
+       "type": "choice",
+       "question": "拿到 JSON 接口数据，通常转成字典/列表用？",
+       "options": [
+        "r.json()",
+        "r.text 直接当字典用",
+        "json.dumps()"
+       ],
+       "answer": 0,
+       "explain": "r.json() 解析 JSON。"
+      },
+      {
+       "type": "tap",
+       "question": "以下哪些能提升爬虫的稳定性？（多选）",
+       "multi": true,
+       "options": [
+        "设 timeout 超时",
+        "失败重试",
+        "用 Session 保持会话",
+        "不管 403 硬爬"
+       ],
+       "answer": [
+        0,
+        1,
+        2
+       ],
+       "explain": "前三个增强健壮性，第四个会把自己ban掉。"
+      },
+      {
+       "type": "choice",
+       "question": "soup.select_one('.title').get_text() 得到？",
+       "options": [
+        "该元素的纯文本",
+        "整段 HTML",
+        "它的所有属性"
+       ],
+       "answer": 0,
+       "explain": "get_text() 取文本。"
+      }
+     ]
     }
    ]
   },
@@ -2568,18 +2704,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "PAGINATION",
-       "zh": "分页：数据分成多页，逐页抓取",
-       "pron": "ˌpæʤəˈneɪʃən"
+       "zh": "分页：数据分成多页，逐页抓取"
       },
       {
        "en": "OFFSET",
-       "zh": "offset：接口里的\"从第几条开始取\"参数",
-       "pron": "ˈɔfˌsɛt"
+       "zh": "offset：接口里的\"从第几条开始取\"参数"
       },
       {
        "en": "CURSOR",
-       "zh": "游标：接口返回\"下一页指针\"，用它接着翻",
-       "pron": "ˈkərsər"
+       "zh": "游标：接口返回\"下一页指针\"，用它接着翻"
       }
      ],
      "exercises": [
@@ -2659,18 +2792,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "COOKIE",
-       "zh": "Cookie：服务器发的\"身份凭证\"，带着它算登录态",
-       "pron": "ˈkʊki"
+       "zh": "Cookie：服务器发的\"身份凭证\"，带着它算登录态"
       },
       {
        "en": "LOGIN",
-       "zh": "登录：拿到并维持 Cookie 的过程",
-       "pron": "login*"
+       "zh": "登录：拿到并维持 Cookie 的过程"
       },
       {
        "en": "CAPTCHA",
-       "zh": "验证码：防止自动登录的防护，requests 常过不了",
-       "pron": "captcha*"
+       "zh": "验证码：防止自动登录的防护，requests 常过不了"
       }
      ],
      "exercises": [
@@ -2756,18 +2886,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "PROXY",
-       "zh": "代理：中转服务器，让你换 IP 发起请求",
-       "pron": "ˈprɑksi"
+       "zh": "代理：中转服务器，让你换 IP 发起请求"
       },
       {
        "en": "DELAY",
-       "zh": "延迟：请求间隔，降低频率避免被封",
-       "pron": "dɪˈleɪ"
+       "zh": "延迟：请求间隔，降低频率避免被封"
       },
       {
        "en": "RATE",
-       "zh": "频率/速率：单位时间请求数，越低越礼貌",
-       "pron": "reɪt"
+       "zh": "频率/速率：单位时间请求数，越低越礼貌"
       }
      ],
      "exercises": [
@@ -2853,18 +2980,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "SELENIUM",
-       "zh": "Selenium：驱动真实浏览器自动化渲染/操作的库",
-       "pron": "səˈliniəm"
+       "zh": "Selenium：驱动真实浏览器自动化渲染/操作的库"
       },
       {
        "en": "DYNAMIC",
-       "zh": "动态页面：内容由 JS 渲染，初始 HTML 拿不到",
-       "pron": "daɪˈnæmɪk"
+       "zh": "动态页面：内容由 JS 渲染，初始 HTML 拿不到"
       },
       {
        "en": "DRIVER",
-       "zh": "驱动：如 ChromeDriver，让 Selenium 控制浏览器",
-       "pron": "ˈdraɪvər"
+       "zh": "驱动：如 ChromeDriver，让 Selenium 控制浏览器"
       }
      ],
      "exercises": [
@@ -2955,18 +3079,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "ROBOTS",
-       "zh": "robots.txt：站点根的爬取规则告示",
-       "pron": "ˈroʊˌbəts"
+       "zh": "robots.txt：站点根的爬取规则告示"
       },
       {
        "en": "DISALLOW",
-       "zh": "Disallow：声明禁止爬取的路径",
-       "pron": "ˌdɪsəˈlaʊ"
+       "zh": "Disallow：声明禁止爬取的路径"
       },
       {
        "en": "ALLOW",
-       "zh": "Allow：在禁止大前提下放开某些路径",
-       "pron": "əˈlaʊ"
+       "zh": "Allow：在禁止大前提下放开某些路径"
       }
      ],
      "exercises": [
@@ -3046,18 +3167,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "POLITE",
-       "zh": "礼貌爬虫：控频、亮身份、只取所需、守规则",
-       "pron": "pəˈlaɪt"
+       "zh": "礼貌爬虫：控频、亮身份、只取所需、守规则"
       },
       {
        "en": "CACHE",
-       "zh": "缓存：已抓的存本地，避免重复请求",
-       "pron": "kæˈʃeɪ"
+       "zh": "缓存：已抓的存本地，避免重复请求"
       },
       {
        "en": "CONCURRENCY",
-       "zh": "并发：同时进行的请求数，过高像攻击",
-       "pron": "concurrency*"
+       "zh": "并发：同时进行的请求数，过高像攻击"
       }
      ],
      "exercises": [
@@ -3143,18 +3261,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "PIPL",
-       "zh": "个人信息保护法：严管个人数据的收集与使用",
-       "pron": "pipl*"
+       "zh": "个人信息保护法：严管个人数据的收集与使用"
       },
       {
        "en": "COPYRIGHT",
-       "zh": "版权：抓来的内容别擅自商用转发",
-       "pron": "ˈkɑpiˌraɪt"
+       "zh": "版权：抓来的内容别擅自商用转发"
       },
       {
        "en": "RED LINE",
-       "zh": "红线：违法/侵权/破防行为，碰了后果严重",
-       "pron": "rɛd laɪn"
+       "zh": "红线：违法/侵权/破防行为，碰了后果严重"
       }
      ],
      "exercises": [
@@ -3252,18 +3367,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "ENDPOINT",
-       "zh": "接口地址：API 的 URL，发请求拿数据的地方",
-       "pron": "ˈɛndˌpɔɪnt"
+       "zh": "接口地址：API 的 URL，发请求拿数据的地方"
       },
       {
        "en": "JSON DUMP",
-       "zh": "json.dump：把 Python 数据写成 JSON 文件",
-       "pron": "json* dəmp"
+       "zh": "json.dump：把 Python 数据写成 JSON 文件"
       },
       {
        "en": "TIMEOUT",
-       "zh": "超时：requests 等响应的秒数，防卡死",
-       "pron": "ˈtaɪˌmaʊt"
+       "zh": "超时：requests 等响应的秒数，防卡死"
       }
      ],
      "exercises": [
@@ -3375,18 +3487,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "SELECT",
-       "zh": "select：按 CSS 选择器批量找元素",
-       "pron": "səˈlɛkt"
+       "zh": "select：按 CSS 选择器批量找元素"
       },
       {
        "en": "DICTWRITER",
-       "zh": "DictWriter：把字典列表写成 CSV 的列",
-       "pron": "dictwriter*"
+       "zh": "DictWriter：把字典列表写成 CSV 的列"
       },
       {
        "en": "BOM",
-       "zh": "utf-8-sig：带 BOM 的 utf-8，Excel 打开中文不乱码",
-       "pron": "bɑm"
+       "zh": "utf-8-sig：带 BOM 的 utf-8，Excel 打开中文不乱码"
       }
      ],
      "exercises": [
@@ -3497,18 +3606,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "CONTENT",
-       "zh": "r.content：响应的二进制正文，用于图片/文件",
-       "pron": "ˈkɑntɛnt"
+       "zh": "r.content：响应的二进制正文，用于图片/文件"
       },
       {
        "en": "WB MODE",
-       "zh": "wb：以写二进制方式开文件，存图片必须用",
-       "pron": "wb* moʊd"
+       "zh": "wb：以写二进制方式开文件，存图片必须用"
       },
       {
        "en": "Makedirs",
-       "zh": "os.makedirs：递归建目录，exist_ok 防报错",
-       "pron": "makedirs*"
+       "zh": "os.makedirs：递归建目录，exist_ok 防报错"
       }
      ],
      "exercises": [
@@ -3619,18 +3725,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "PIPELINE",
-       "zh": "流水线：抓取→解析→存储一气呵成的完整链路",
-       "pron": "ˈpaɪˌplaɪn"
+       "zh": "流水线：抓取→解析→存储一气呵成的完整链路"
       },
       {
        "en": "README",
-       "zh": "说明文档：写清脚本用途、运行方式、数据用途",
-       "pron": "readme*"
+       "zh": "说明文档：写清脚本用途、运行方式、数据用途"
       },
       {
        "en": "ROBUST",
-       "zh": "健壮性：try/except + 默认值，脏数据不崩",
-       "pron": "roʊˈbəst"
+       "zh": "健壮性：try/except + 默认值，脏数据不崩"
       }
      ],
      "exercises": [
@@ -3690,6 +3793,113 @@ window.COURSE_DATA = {
       "给脚本加 try/except 兜底和随机延迟，跑通一整轮。"
      ],
      "color": "#e0567a"
+    },
+    {
+     "id": "exam3",
+     "title": "阶段考③：存储·进阶·反爬（CH7-9）",
+     "icon": "📝",
+     "type": "exam",
+     "color": "#5bc0a8",
+     "markdown": "## 阶段考③：存储 · 进阶 · 反爬\n\n覆盖 **数据存储 / 进阶技巧 / 反爬与合规** 三章。\n\n**规则**：8 题，首次正确率 ≥ 80% 过关，得「阶段考③过关」勋章，可重复挑战。",
+     "takeaway": "阶段考③过关 = 你会把数据落盘（CSV/JSON/Excel）、会用分页/会话/代理、更懂合规红线。能独当一面了。",
+     "words": [],
+     "tasks": [],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "想把列表数据写成表格文件，常用？",
+       "options": [
+        "csv 模块",
+        "random 模块",
+        "math 模块"
+       ],
+       "answer": 0,
+       "explain": "csv 写表格。"
+      },
+      {
+       "type": "choice",
+       "question": "用 openpyxl 可以读写哪种格式的表格文件？",
+       "options": [
+        "Excel .xlsx",
+        "PDF",
+        "MP3"
+       ],
+       "answer": 0,
+       "explain": "openpyxl 专治 xlsx。"
+      },
+      {
+       "type": "choice",
+       "question": "翻页爬虫常改变 URL 里的哪个参数来翻下一页？",
+       "options": [
+        "page 或 offset",
+        "color",
+        "lang"
+       ],
+       "answer": 0,
+       "explain": "页码/偏移量藏在 page、offset 里。"
+      },
+      {
+       "type": "choice",
+       "question": "带着登录态继续爬，通常要保留服务器发的什么？",
+       "options": [
+        "Cookie",
+        "图片",
+        "CSS"
+       ],
+       "answer": 0,
+       "explain": "Cookie 维持会话。"
+      },
+      {
+       "type": "choice",
+       "question": "对付 JS 动态渲染的页面，常用？",
+       "options": [
+        "Selenium 驱动真实浏览器",
+        "只看静态 HTML",
+        "关掉网络"
+       ],
+       "answer": 0,
+       "explain": "Selenium 能跑 JS。"
+      },
+      {
+       "type": "choice",
+       "question": "爬虫的法律红线主要指？",
+       "options": [
+        "抓隐私/涉密/受版权保护且禁止的数据",
+        "请求次数多一点",
+        "用 Python 写爬虫"
+       ],
+       "answer": 0,
+       "explain": "隐私/涉密/侵权是红线。"
+      },
+      {
+       "type": "tap",
+       "question": "以下哪些是合规做法？（多选）",
+       "multi": true,
+       "options": [
+        "先读 robots.txt",
+        "控制请求频率",
+        "不抓个人信息",
+        "伪造身份硬刚"
+       ],
+       "answer": [
+        0,
+        1,
+        2
+       ],
+       "explain": "前三个合规，伪造身份踩线。"
+      },
+      {
+       "type": "choice",
+       "question": "把字典存成结构化文件，用？",
+       "options": [
+        "json.dump(data, f)",
+        "csv.reader",
+        "openpyxl"
+       ],
+       "answer": 0,
+       "explain": "json.dump 写 JSON。"
+      }
+     ]
     }
    ]
   },
@@ -3711,18 +3921,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "DEBUG",
-       "zh": "调试：逐层打印、缩小范围定位问题",
-       "pron": "diˈbəg"
+       "zh": "调试：逐层打印、缩小范围定位问题"
       },
       {
        "en": "DYNAMIC",
-       "zh": "动态加载：数据由 JS 现拉，HTML 里没有，要去接口拿",
-       "pron": "daɪˈnæmɪk"
+       "zh": "动态加载：数据由 JS 现拉，HTML 里没有，要去接口拿"
       },
       {
        "en": "FALLBACK",
-       "zh": "兜底：try/except 或默认值，脏数据不崩",
-       "pron": "ˈfɔlˌbæk"
+       "zh": "兜底：try/except 或默认值，脏数据不崩"
       }
      ],
      "exercises": [
@@ -3826,18 +4033,15 @@ window.COURSE_DATA = {
      "words": [
       {
        "en": "SCRAPY",
-       "zh": "Scrapy：专业爬虫框架，自带调度与管道",
-       "pron": "scrapy*"
+       "zh": "Scrapy：专业爬虫框架，自带调度与管道"
       },
       {
        "en": "ASYNC",
-       "zh": "异步：asyncio+aiohttp，并发量级提升",
-       "pron": "async*"
+       "zh": "异步：asyncio+aiohttp，并发量级提升"
       },
       {
        "en": "SELENIUM",
-       "zh": "Selenium：驱动真实浏览器，爬 JS 动态页",
-       "pron": "səˈliniəm"
+       "zh": "Selenium：驱动真实浏览器，爬 JS 动态页"
       }
      ],
      "exercises": [
@@ -3907,6 +4111,443 @@ window.COURSE_DATA = {
       "把你真正的第一个毕业项目脚本整理好，加上说明和合规声明，留作纪念。"
      ],
      "color": "#39a0a8"
+    }
+   ]
+  },
+  {
+   "title": "毕业实战项目",
+   "lessons": [
+    {
+     "id": "grad1",
+     "title": "毕业项目①：汇率·金价走势记录器",
+     "icon": "💱",
+     "markdown": "## 毕业项目①：汇率·金价走势记录器\n\n把每天关注的「美元兑人民币」「黄金价格」记下来，攒成一张 **走势表**——今天记一行，明天记一行，日子久了就能看涨跌。这练的是「抓接口 JSON → 取数值 → 追加写 CSV（不覆盖历史）」。\n\n### 你要做成什么\n- 输入：汇率 / 金价接口返回的今日数值\n- 输出：`rate_history.csv`，每行一天：`日期,美元兑人民币,金价`\n\n### 离线演练\n下面用一组「模拟接口返回」演示「取数值 + 拼一行 + 追加」的逻辑。点运行看 CSV 一天天变长。\n\n### 课后真跑\n真实换接口：`requests.get('https://open.er-api.com/v6/latest/USD')`，取 `r['rates']['CNY']`；金价另用一个公开接口。用 `open('rate_history.csv','a',...)` 的 `a` 模式**追加**，这样历史不丢。\n\n> 小提醒：金价接口可能要换站点；核心是「取一个数 → 追加一行」，站点只是数据源。",
+     "code": "# 离线模拟：假装今天从接口拿到了汇率和金价\nhistory = ['2026-07-23,7.20,560.1', '2026-07-24,7.19,561.2']\ntoday = '2026-07-25,7.18,562.3'\nhistory.append(today)  # 真实场景：用 open('rate_history.csv','a') 把 today 写进文件\nprint('rate_history.csv 现在共有', len(history), '天:')\nfor r in history:\n    print(r)\nprint('--- 多天运行后这张表就是你的专属走势图 ---')",
+     "takeaway": "走势记录器=接口取数→追加CSV。offline 练「append 不覆盖历史」的思路；课后换真实汇率/金价接口+mode='a'写盘，日积月累看涨跌。",
+     "words": [
+      {
+       "en": "RATE",
+       "zh": "汇率：一种货币换另一种货币的比值",
+       "pron": "reɪt"
+      },
+      {
+       "en": "APPEND",
+       "zh": "追加：在文件末尾加内容，不覆盖原有",
+       "pron": "əˈpɛnd"
+      },
+      {
+       "en": "TREND",
+       "zh": "走势：数据随时间变化的动向",
+       "pron": "trɛnd"
+      }
+     ],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "想保留每天历史、不让新数据盖掉旧的，打开文件要用哪种模式？",
+       "options": [
+        "'w' 覆盖",
+        "'a' 追加",
+        "'r' 只读"
+       ],
+       "answer": 1,
+       "explain": "'a' 是 append，在末尾加内容；'w' 会清空原文件。"
+      },
+      {
+       "type": "fill",
+       "question": "从接口 JSON 取出人民币值，用 r['rates']['______']。",
+       "answer": "CNY",
+       "explain": "CNY 是人民币的代码，rates 字典里按代码取。"
+      },
+      {
+       "type": "open",
+       "question": "为什么记录走势比只看今天一个数更有用？写 2 句。",
+       "answer": "示例：走势能看涨跌规律、做对比；单点数字看不出变化，攒成表才有意义。"
+      }
+     ],
+     "tasks": [
+      "运行离线代码，确认 CSV 正确追加到第 3 天。",
+      "换真实汇率接口（课后联网跑），每天追加一行到 rate_history.csv。",
+      "加一行算「比昨天涨还是跌」，在表里多记一个涨跌标记。"
+     ],
+     "color": "#3cc6ff"
+    },
+    {
+     "id": "grad2",
+     "title": "毕业项目②：我的文章收藏夹（网页正文提取）",
+     "icon": "📚",
+     "markdown": "## 毕业项目②：我的文章收藏夹（网页正文提取）\n\n看到好文章想收藏？别整页存（广告导航一堆）。咱们用爬虫把 **正文** 单独抠出来，存成干净的 `.md` 文件，建一个「我的阅读收藏」。这练的是「HTML → 提取正文 → 存干净文本」。\n\n### 你要做成什么\n- 输入：一篇文章的网址\n- 输出：`my_reading/文章名.md`，只有正文，没有广告和菜单\n\n### 离线演练\n下面用一段「带导航和广告」的假 HTML，演示怎么用规则抠出 `<article>` 里的 `<p>` 正文。点运行看提取结果。\n\n### 课后真跑\n真实换 `requests.get(url)` 拿 HTML，用 `BeautifulSoup(html,'lxml').select_one('article').get_text('\\n')` 取正文，写进 `.md`。不同站正文标签可能叫 `.content` / `#article`，灵活换选择器。\n\n> 抓之前确认站点允许；只存自己看，不商用。",
+     "code": "import re\nhtml = '<nav>菜单 广告</nav><article><p>今天学爬虫真开心。</p><p>能把乱糟糟网页变成干净文字。</p></article><footer>版权</footer>'\n# 离线模拟：抠出 <article> 里的所有 <p> 当正文\nm = re.search(r'<article>(.*?)</article>', html, re.S)\nparas = re.findall(r'<p>(.*?)</p>', m.group(1))\ntext = '\\n'.join(paras)\nprint('提取到的正文：')\nprint(text)\nprint('--- 真实场景用 bs4: soup.select_one(\"article\").get_text() 存成 .md ---')",
+     "takeaway": "文章收藏夹=HTML→正文提取→存.md。offline 用正则练「定位 article/取 p」；课后换 bs4 真抓，建自己的干净阅读库。",
+     "words": [
+      {
+       "en": "ARTICLE",
+       "zh": "正文：网页里真正的内容区，常包在 <article>",
+       "pron": "ˈɑːrtɪkəl"
+      },
+      {
+       "en": "SELECTOR",
+       "zh": "选择器：告诉程序去哪抠元素的规则",
+       "pron": "sɪˈlɛktər"
+      },
+      {
+       "en": "MARKDOWN",
+       "zh": "Markdown：轻量文本格式，.md 文件易读易存",
+       "pron": "ˈmɑːrkdaʊn"
+      }
+     ],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "想只要正文不要广告，最该抠哪个区域？",
+       "options": [
+        "整个 <html>",
+        "<article> 里的 <p>",
+        "<nav> 导航"
+       ],
+       "answer": 1,
+       "explain": "正文通常在 <article>，导航/广告是干扰项。"
+      },
+      {
+       "type": "fill",
+       "question": "BeautifulSoup 里取出标签文字，用 tag.______()。",
+       "answer": "get_text",
+       "explain": "get_text() 拿到标签内纯文字。"
+      },
+      {
+       "type": "open",
+       "question": "为什么存 .md 比整页截图更适合收藏？写 2 句。",
+       "answer": "示例：.md 是纯文字、能搜索能再编辑；截图难检索、占空间且不能复制文字。"
+      }
+     ],
+     "tasks": [
+      "运行离线代码，确认只拿到两段正文。",
+      "找一个你喜欢的文章页，用 bs4 真实提取正文存成 my_reading/xxx.md（课后联网跑）。",
+      "给收藏脚本加「文件名去非法字符」，避免标题带 / 或 ? 存盘报错。"
+     ],
+     "color": "#9b6bff"
+    },
+    {
+     "id": "grad4",
+     "title": "毕业实战 · 课后真跑指南",
+     "icon": "🚀",
+     "markdown": "## 毕业实战 · 课后真跑指南\n\n前面两节课在浏览器里用「模拟数据」跑通了逻辑。这一节给你**真实能联网爬**的完整代码——复制到你自己的电脑（装了 Python 3）上跑，就能抓到真数据、生成真文件。\n\n### 第 0 步：装库（一次）\n```bash\npip install requests beautifulsoup4 lxml openpyxl\n```\n\n### 项目① 汇率·金价走势记录器（真联网版）\n```python\nimport requests, csv\nfrom datetime import date\nr = requests.get('https://open.er-api.com/v6/latest/USD', timeout=10).json()\ncny = r['rates']['CNY']\ngold = 0  # 金价可换用公开接口填这里\nwith open('rate_history.csv', 'a', newline='', encoding='utf-8') as f:\n    csv.writer(f).writerow([date.today(), cny, gold])\nprint('已追加一行到 rate_history.csv：', date.today(), cny, gold)\n```\n\n### 项目② 我的文章收藏夹（真联网版）\n```python\nimport requests, os, re\nfrom bs4 import BeautifulSoup\nurl = 'https://example.com/good-article'\nhtml = requests.get(url, headers={'User-Agent':'Mozilla/5.0'}, timeout=10).text\nsoup = BeautifulSoup(html, 'lxml')\nbody = soup.select_one('article') or soup.select_one('.content') or soup.body\ntext = body.get_text('\\n', strip=True) if body else ''\nos.makedirs('my_reading', exist_ok=True)\nname = re.sub(r'[^\\w\\u4e00-\\u9fa5]', '_', url.split('/')[-1] or 'article')\nopen('my_reading/' + name + '.md', 'w', encoding='utf-8').write(text)\nprint('已保存正文到 my_reading/', name, '.md')\n```\n\n> ⚠️ 把 example 换成真实可访问站点；遵守 robots、加延迟、不抓隐私。跑之前先确认网络能通。",
+     "takeaway": "课后真跑指南：把两节课的模拟逻辑换成真实 requests/bs4 代码，在你电脑联网跑即生成真文件。浏览器沙盒禁真联网，本节点代码+步骤，复制去本地跑。",
+     "words": [
+      {
+       "en": "LOCAL",
+       "zh": "本地：在你自己电脑上的运行环境",
+       "pron": "ˈloʊkəl"
+      },
+      {
+       "en": "PIP",
+       "zh": "pip：装第三方库的工具，如 pip install requests",
+       "pron": "pɪp"
+      }
+     ],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "为什么课后真跑要用你自己的电脑而不是浏览器？",
+       "options": [
+        "浏览器迷你Python不能真发网络请求",
+        "电脑太慢",
+        "不想让人看"
+       ],
+       "answer": 0,
+       "explain": "课程内 Skulpt 沙盒禁止真实网络，真抓取必须在你本机 Python 跑。"
+      },
+      {
+       "type": "fill",
+       "question": "运行真实爬虫前，通常用 ______ 安装第三方库。",
+       "answer": "pip install",
+       "explain": "pip install requests bs4 等装好依赖。"
+      },
+      {
+       "type": "open",
+       "question": "跑真联网代码前，你会先确认哪三件事？写 3 句。",
+       "answer": "示例：①目标站 robots 允许且合法；②已 pip install 所需库；③网络能访问该站、加了 UA 与延迟。"
+      }
+     ],
+     "tasks": [
+      "把项目①的真实代码存成 weather.py，在你电脑跑出 weather_daily.csv。",
+      "把项目②换成真实公开榜单接口，跑出 hot_top.csv。",
+      "把项目③跑通，imgs/ 里有图、image_manifest.json 生成。"
+     ],
+     "color": "#5bc0a8"
+    },
+    {
+     "id": "exam4",
+     "title": "阶段考④：毕业全程（实战·冲刺·毕设）",
+     "icon": "📝",
+     "type": "exam",
+     "color": "#9b6bff",
+     "markdown": "## 阶段考④：毕业全程\n\n覆盖 **实战项目 / 毕业冲刺 / 毕业实战项目** 三章。\n\n**规则**：8 题，首次正确率 ≥ 80% 过关，得「阶段考④过关」勋章，可重复挑战。这是走向「Python 小学士」的最后一考！",
+     "takeaway": "阶段考④过关 = 你走通了完整爬虫流水线：请求→解析→存储，还知道怎么调试、怎么真跑。毕业在望。",
+     "words": [],
+     "tasks": [],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "做「天气看板」第一步通常是？",
+       "options": [
+        "请求天气接口/页面拿到数据",
+        "直接画图表",
+        "先写数据库"
+       ],
+       "answer": 0,
+       "explain": "先取到数据。"
+      },
+      {
+       "type": "choice",
+       "question": "批量下载一整套图片时，通常把每张图？",
+       "options": [
+        "保存到本地文件夹",
+        "只打印链接",
+        "发给别人"
+       ],
+       "answer": 0,
+       "explain": "下载即写本地。"
+      },
+      {
+       "type": "choice",
+       "question": "综合毕业项目「挑一个站从头爬到尾」强调的是？",
+       "options": [
+        "完整流程：请求→解析→存储",
+        "只写一个请求",
+        "只画界面"
+       ],
+       "answer": 0,
+       "explain": "全链路打通。"
+      },
+      {
+       "type": "choice",
+       "question": "调试爬虫最常见的第一步是？",
+       "options": [
+        "先打印 status_code 和正文前几百字",
+        "直接上线",
+        "删代码"
+       ],
+       "answer": 0,
+       "explain": "先确认拿到了正常数据。"
+      },
+      {
+       "type": "choice",
+       "question": "汇率走势记录器用 open('rate.csv','a')，其中的 'a' 表示？",
+       "options": [
+        "追加(append)写",
+        "覆盖写",
+        "只读"
+       ],
+       "answer": 0,
+       "explain": "a=append，每天加一行。"
+      },
+      {
+       "type": "choice",
+       "question": "「我的文章收藏夹」提取正文常用？",
+       "options": [
+        "BeautifulSoup 选 article 取文本",
+        "只看图片",
+        "读 Cookie"
+       ],
+       "answer": 0,
+       "explain": "bs4 抠正文。"
+      },
+      {
+       "type": "tap",
+       "question": "毕业实战「课后真跑」要注意什么？（多选）",
+       "multi": true,
+       "options": [
+        "pip 装好 requests/bs4",
+        "遵守 robots、加延迟",
+        "在浏览器里直接跑 requests",
+        "不抓隐私数据"
+       ],
+       "answer": [
+        0,
+        1,
+        3
+       ],
+       "explain": "浏览器沙盒禁真联网，要本地跑；前三个是真跑要点。"
+      },
+      {
+       "type": "choice",
+       "question": "走完毕业全程，你真正掌握的是？",
+       "options": [
+        "抓→解析→存储 的完整爬虫能力",
+        "只会复制代码",
+        "只会看视频"
+       ],
+       "answer": 0,
+       "explain": "全链路能力才是真毕业。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "进阶加餐",
+   "lessons": [
+    {
+     "id": "adv_scrapy",
+     "title": "进阶加餐①：Scrapy 框架入门",
+     "icon": "🕷️",
+     "markdown": "## Scrapy：专业爬虫的流水线\n\n手动 requests+bs4 适合小任务；要爬**大量、多页、要管管道**的站，用 Scrapy 更省力——它把「请求→解析→清洗→存储」拆成标准零件。\n\n### 核心零件\n- **Spider**：你写的「怎么抓、怎么解析」\n- **Item**：定义要存哪些字段\n- **Pipeline**：清洗/存库的地方\n- **Scheduler/Downloader**：框架自动管排队、并发\n\n### 最小示例（在你电脑跑）\n```python\nimport scrapy\nclass BookSpider(scrapy.Spider):\n    name = 'books'\n    start_urls = ['https://example.com/books']\n    def parse(self, resp):\n        for b in resp.css('.book'):\n            yield {'title': b.css('.t::text').get(), 'price': b.css('.p::text').get()}\n```\n\n### 装与跑\n```bash\npip install scrapy\n# 在项目目录：scrapy crawl books -o books.json\n```\n\n> Scrapy 在浏览器迷你 Python 里跑不了（需真环境）。本节点亮思路，真跑在你电脑。进阶：给 Spider 加翻页、用 CrawlSpider 跟链接。",
+     "code": "# 离线示意：用纯 Python 模拟 Scrapy「yield item」的数据流\nitems = []\ndef parse(book):\n    items.append({'title': book['t'], 'price': book['p']})\nfor b in [{'t':'A','p':'30'},{'t':'B','p':'25'}]:\n    parse(b)\nprint('已产出', len(items), '条 item：')\nfor it in items:\n    print(it)\nprint('--- 真实 Scrapy 用 scrapy crawl 跑，数据自动进 Pipeline/JSON ---')",
+     "takeaway": "Scrapy 把爬虫拆成 Spider/Item/Pipeline 标准件，适合大量多页。浏览器跑不了，本节点思路，真跑在你电脑。",
+     "words": [
+      {
+       "en": "SPIDER",
+       "zh": "蜘蛛：你写的抓取与解析逻辑",
+       "pron": "ˈspaɪdər"
+      },
+      {
+       "en": "PIPELINE",
+       "zh": "管道：清洗与存储数据的环节",
+       "pron": "ˈpaɪplaɪn"
+      },
+      {
+       "en": "YIELD",
+       "zh": "产出：逐个交出一个结果",
+       "pron": "jiːld"
+      }
+     ],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "爬大量多页网站，为什么用 Scrapy 比手写循环省心？",
+       "options": [
+        "它自动管排队/并发/重试",
+        "因为它不用写代码",
+        "因为它更快联网"
+       ],
+       "answer": 0,
+       "explain": "Scrapy 内置调度器与下载器，自动处理并发、重试、限速。"
+      },
+      {
+       "type": "fill",
+       "question": "Spider 里你主要写 ______ 方法决定怎么抓和解析。",
+       "answer": "parse",
+       "explain": "parse 是每个响应回来后执行的解构函数。"
+      },
+      {
+       "type": "open",
+       "question": "Spider 的 start_urls 和 yield 分别干什么？写 2 句。",
+       "answer": "示例：start_urls 是入口地址列表；yield 把解析出的每条 item 交出去，框架自动送进 Pipeline 或存文件。"
+      }
+     ],
+     "tasks": [
+      "pip install scrapy，跑通官方最小示例。",
+      "把上面的 BookSpider 改成抓你选的公开站，用 -o books.json 存盘。",
+      "加翻页：用 response.follow 跟「下一页」链接。"
+     ],
+     "color": "#7b8cff"
+    },
+    {
+     "id": "adv_pandas",
+     "title": "进阶加餐②：pandas 清洗 + matplotlib 画图",
+     "icon": "📊",
+     "markdown": "## 爬来的数据，怎么变成图？\n\n爬虫抓到的 CSV/JSON 只是原料。用 **pandas** 清洗、用 **matplotlib** 画图，才能让数据说话。\n\n### pandas 三板斧\n- `pd.read_csv()` 读进来\n- 筛选/分组/去重\n- `to_csv()` 存回去\n\n### matplotlib 画一张图\n```python\nimport matplotlib.pyplot as plt\nplt.bar(names, values)\nplt.title('热度 Top5')\nplt.savefig('top5.png')\nplt.show()\n```\n\n### 装\n```bash\npip install pandas matplotlib\n```\n\n> 同样浏览器跑不了，本节点思路+模拟，真跑在你电脑。把 hot_top.csv 读进来画张榜图，就是你的第一个数据作品。",
+     "code": "# 离线示意：用纯 Python 模拟「读 CSV → 取 Top5 → 准备画图数据」\nrows = [('A',982),('B',873),('C',765),('D',654),('E',543),('F',432)]\ntop5 = sorted(rows, key=lambda x:-x[1])[:5]\nprint('Top5 榜单：')\nfor name,v in top5:\n    print(f'  {name}: {\"█\"*(v//100)} {v}')\nprint('--- 真实用法：pd.read_csv(\"hot_top.csv\") 后 plt.bar() 出图 ---')",
+     "takeaway": "pandas 读洗存、matplotlib 出图，让爬来的数据可视化。浏览器跑不了，本节点思路，真跑在你电脑。",
+     "words": [
+      {
+       "en": "DATAFRAME",
+       "zh": "pandas 的二维表，像 Excel 表",
+       "pron": "ˈdeɪtəfreɪm"
+      },
+      {
+       "en": "VISUALIZE",
+       "zh": "可视化：把数据画成图",
+       "pron": "ˈvɪʒuəlaɪz"
+      },
+      {
+       "en": "MATPLOTLIB",
+       "zh": "matplotlib：Python 画图库",
+       "pron": "mætˈplɒtliːb"
+      }
+     ],
+     "exercises": [
+      {
+       "type": "choice",
+       "question": "想给爬来的榜单画柱状图，第一步通常？",
+       "options": [
+        "直接 plt.bar",
+        "先用 pandas 读进 DataFrame 再取列",
+        "先发朋友圈"
+       ],
+       "answer": 1,
+       "explain": "先读成结构化表，再取列数据喂给画图函数。"
+      },
+      {
+       "type": "fill",
+       "question": "把 CSV 读成 DataFrame，用 ______ 函数。",
+       "answer": "pd.read_csv",
+       "explain": "read_csv 把表格文件变成可操作的 DataFrame。"
+      },
+      {
+       "type": "open",
+       "question": "为什么爬来的原始数据往往要先清洗再画？写 2 句。",
+       "answer": "示例：原始数据常有缺值、重复、格式乱；清洗后图才准确好看，结论才靠谱。"
+      }
+     ],
+     "tasks": [
+      "pip install pandas matplotlib，跑通官方最小示例。",
+      "把 hot_top.csv 用 pandas 读进来，取 Top5 画柱状图存 top5.png。",
+      "加一步清洗：去重、把「万」转成数字再画。"
+     ],
+     "color": "#39a0a8"
+    }
+   ]
+  },
+  {
+   "title": "家长课程",
+   "lessons": [
+    {
+     "id": "crawler_intro",
+     "title": "爬虫是什么 · 给家长的一封说明信",
+     "icon": "📨",
+     "color": "#6c8cff",
+     "forParent": true,
+     "markdown": "## 一、爬虫到底是个啥？\n\n想象一只小蜘蛛，你告诉它「去这个网页，把标题、价格、天气这几样东西搬回来」。它照做，把信息整齐地放进表格里——这就是**网络爬虫**。它干的活，本质上就是「让电脑自动帮我们上网收集公开信息」。\n\n## 二、孩子在这套课里能学到啥？\n\n不用死记语法。孩子会从「自动打开一个网页」开始，一步步学会：\n\n- **抓取**：用 `requests` 把网页内容取回来；\n- **解析**：用 `BeautifulSoup` 从乱糟糟的网页里挑出想要的内容；\n- **存储**：把结果存成 CSV / JSON / 图片，攒成自己的小数据库；\n- **实战**：做出能跑的真东西（天气日报、热搜榜单、文章收藏夹、汇率记录器）。\n\n## 三、学完能做出什么？\n\n不是玩具 demo，是**每天能真用**的小工具：\n\n- 🌤️ 一键生成「今天天气日报」；\n- 🔥 自动抓「热搜 Top10」存成表；\n- 📚 给一篇文章网址，自动抠出正文存成干净笔记；\n- 💱 每天记一笔汇率/金价，攒成专属走势表。\n\n## 四、安全与分寸（请家长放心）\n\n我们只抓**公开网页**，讲清楚三条底线：\n\n1. 不碰登录后的隐私数据、不爬需授权的页面；\n2. 控制速度、不骚扰网站（课程里教 `time.sleep` 和礼貌请求）；\n3. 只把数据用于学习和个人整理，不商用、不转发牟利。\n\n> 爬虫是数字时代的「读写能力」——会读会写网页的人，等于多了一双自动收集信息的手。",
+     "takeaway": "爬虫 = 让电脑自动收集公开信息；孩子学的是「抓→解析→存储」一条龙，做出每天真能用的小工具，且只碰公开数据、守规矩。",
+     "words": [
+      {
+       "zh": "爬虫",
+       "en": "crawler"
+      },
+      {
+       "zh": "公开数据",
+       "en": "public data"
+      },
+      {
+       "zh": "合规",
+       "en": "compliance"
+      }
+     ]
+    },
+    {
+     "id": "tool_guide",
+     "title": "这套工具怎么用 · 家长速览",
+     "icon": "🧭",
+     "color": "#5bc0a8",
+     "forParent": true,
+     "markdown": "## 一、首页三块，先认个门\n\n打开工具，首页是三块彩色瓷砖：\n\n- 📚 **学生课程**：正式课，从「什么是爬虫」一路打到「能写爬虫脚本」。孩子自己点进去学。\n- 🎮 **学生园地**：练字、单词本、毕业典礼回顾里的实战项目，随时巩固。\n- 🛡️ **家长园地**（带锁）：要点一下、输入**家长密码**才进，里面是给家长用的设置与报告。\n\n## 二、孩子怎么学（您不用陪，看报告就行）\n\n每节课的流程很简单：**看视频/讲义 → 做练习 → 点「提交本节」**。\n\n- 练习做对会自动判分，做错的题可以「补做」，补做对也能拿勋章；\n- 学几章会有一次**阶段考**，首次正确率 ≥80% 过关、得过关章；\n- 集齐勋章会点亮「荣誉架」，孩子很有成就感。\n\n## 三、家长园地里您能做什么\n\n点开「家长园地」，可以：\n\n- ✏️ 改**孩子昵称**（首页欢迎语会跟着变）；\n- 🔊 调**语音风格/音色**（向导「小光」讲课时用的声音）；\n- 🔓 看**课程解锁状态**、逐课解锁或锁定；\n- 📊 看**学习报告**：每课花多久、首答正确率、错在哪；\n- 📈 看**课程反馈结果**：总进度、已得勋章、阶段考是否过关，一眼掌握；\n- 🔑 改**家长密码**；\n- 💾 **备份/恢复进度**：导出「我的课程进度.json」，换电脑不丢。\n\n## 四、进度会不会丢？\n\n不会。所有进度存在**本机浏览器**里，关掉再打开还在。\n真要换设备，用「备份」导出 json，新设备上「导入」即可恢复。\n（激活状态绑本机，换设备需重新激活——这是防盗用的正常设计。）\n\n> 工具是**离线**的，孩子自己就能学；您用「家长园地」掌握进度与设置，互不干扰。\n\n### 关于「真跑真实爬虫」和平板\n平时所有的**看课、做练习、阶段考、拿勋章、听真人语音**，平板（在线版）和电脑（在线版或离线版）都能完成，体验完全一致。只有毕业项目里的「课后真跑真实爬虫」（grad4 指南）需要孩子在**电脑上装好 Python、用终端运行 .py 文件**——这一步任何网页版（平板或电脑在线）都跑不了，是浏览器的安全限制，不是工具的限制。所以：**平板完全够用**，不必为了「真跑」专门下载电脑离线版；真跑是可选的进阶，家里有电脑时再尝试即可。",
+     "takeaway": "首页三块：学生课程/学生园地/家长园地(需密码)。孩子自学的流程是看→练→提交→拿章；家长在园地看报告、改设置、备份进度。进度存本机、可导出，离线可用。",
+     "words": [
+      {
+       "zh": "家长园地",
+       "en": "parent zone"
+      },
+      {
+       "zh": "备份",
+       "en": "backup"
+      },
+      {
+       "zh": "阶段考",
+       "en": "stage exam"
+      }
+     ]
     }
    ]
   }
